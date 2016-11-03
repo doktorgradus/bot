@@ -16,7 +16,7 @@ function sendLocation($chat_id, $latitude , $longitude) {
 function sendSticker($chat_id, $sticker) {
 file_get_contents($GLOBALS['api'] . '/sendSticker?chat_id=' . $chat_id . '&sticker=' . $sticker); 
 }
-function sendPhoto($chat_id, $photo_id, $msgid,$caption) {
-file_get_contents($GLOBALS['api'] . '/sendPhoto?chat_id=' . $chat_id .'&reply_to_message_id='.$msgid. '&photo=' . $photo_id. '&caption=' . $caption); 
+function sendPhoto($chat_id, $photo_id, $msgid,$caption,$replyMarkup) {
+file_get_contents($GLOBALS['api'] . '/sendPhoto?chat_id=' . $chat_id .'&reply_to_message_id='.$msgid. '&photo=' . $photo_id. '&caption=' . $caption. '&reply_markup=' . $replyMarkup);
 }
 ?>
