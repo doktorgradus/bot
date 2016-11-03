@@ -97,8 +97,9 @@ elseif (preg_match_all("/(?<![\w\d])(tits)(?![\w\d])/uim",$message_preg, $mathes
 //     $random = array_rand($answer);
 
 //     sendMessage($chat_id,$answer[$random]."\nКол-во сисек в базе: <b>".$count."</b>");
-    $inline_button1 = array("text"=>"Google url","url"=>"http://google.com");
-    $inline_button2 = array("text"=>"work plz","callback_data"=>'/plz');
+    
+    $inline_button1 = array("text"=>"👍","callback_data"=>'/voteup');
+    $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
