@@ -214,17 +214,4 @@
     $photo_id[] = "AgADAgADU6sxG3FNzRDqk2HH3pMze5M4Sw0ABH1j1-vBOhEYHfMAAgI";
     $rand = array_rand($photo_id);
     $count = count($photo_id);
-
-    $answer = array();
-//     $answer[] = "Есть у меня кое-что для тебя.. ^^,";
-//     $answer[] = "Это я умею, смотри сам";
-//     $answer[] = "Да пожалуйста..";
-//     $answer[] = "Руку не сотри";
-//     $answer[] = "фап тайм?";
-    
-    $random = array_rand($answer);
-
-//     sendMessage($chat_id,$answer[$random]."\nКол-во сисек в базе: <b>".$count."</b>");
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из .".$count);
-
 ?>
