@@ -87,6 +87,24 @@ if (preg_match_all("/(?<![\w\d])(приветствую)(?![\w\d])/uim",$message
 //     sendPhoto($chat_id,$photo_id[$random],$msgid,"Тебе достался вариант №: ".$random);
 elseif (preg_match_all("/(?<![\w\d])(tits)(?![\w\d])/uim",$message_preg, $mathes)) {
     include 'core/commands/tits/tits.php';
+//     $answer = array();
+//     $answer[] = "Есть у меня кое-что для тебя.. ^^,";
+//     $answer[] = "Это я умею, смотри сам";
+//     $answer[] = "Да пожалуйста..";
+//     $answer[] = "Руку не сотри";
+//     $answer[] = "фап тайм?";
+    
+//     $random = array_rand($answer);
+
+//     sendMessage($chat_id,$answer[$random]."\nКол-во сисек в базе: <b>".$count."</b>");
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из .".$count);
+
+}
+elseif (preg_match_all("/(?<![\w\d])(/titscount)(?![\w\d])/uim",$message_preg, $mathes)) {
+    include 'core/commands/tits/tits.php';
+
+    sendMessage($chat_id,$answer[$random]."\nКол-во сисек в базе: <b>".$count."</b>");
+
 }else{
 //         include 'commands/default.php';
 }
