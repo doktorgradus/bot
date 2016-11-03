@@ -97,15 +97,12 @@ elseif (preg_match_all("/(?<![\w\d])(tits)(?![\w\d])/uim",$message_preg, $mathes
 //     $random = array_rand($answer);
 
 //     sendMessage($chat_id,$answer[$random]."\nКол-во сисек в базе: <b>".$count."</b>");
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count);
-
-}
-elseif (preg_match_all("/(?<![\w\d])(/titscount)(?![\w\d])/uim",$message_preg, $mathes)) {
-    include 'core/commands/tits/tits.php';
-    $answer = array();
-    $answer[] = "Есть у меня кое-что для тебя.. ^^,";
-    $random = array_rand($answer);
-    sendMessage($chat_id,$answer[$random]."\nКол-во сисек в базе: <b>".$count."</b>");
+    $inline_button1 = array("text"=>"Google url","url"=>"http://google.com");
+    $inline_button2 = array("text"=>"work plz","callback_data"=>'/plz');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard);
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
 
 }else{
 //         include 'commands/default.php';
