@@ -1,3 +1,3 @@
 <?php
-R::setup( 'mysql:host=192.162.108.108;dbname=bot','newuser', 'password' );
+R::setup( 'mysql:host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'].,$_ENV['DB_LOGIN'], $_ENV['DB_PASSWORD']);
 ?>
