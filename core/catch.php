@@ -102,7 +102,9 @@ elseif (preg_match_all("/(?<![\w\d])(tits)(?![\w\d])/uim",$message_preg, $mathes
 }
 elseif (preg_match_all("/(?<![\w\d])(/titscount)(?![\w\d])/uim",$message_preg, $mathes)) {
     include 'core/commands/tits/tits.php';
-
+    $answer = array();
+    $answer[] = "Есть у меня кое-что для тебя.. ^^,";
+    $random = array_rand($answer);
     sendMessage($chat_id,$answer[$random]."\nКол-во сисек в базе: <b>".$count."</b>");
 
 }else{
