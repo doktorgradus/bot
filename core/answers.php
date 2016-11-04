@@ -1,4 +1,6 @@
 <?php
+$callback_query = $output['callback_query'];
+$data = $callback_query['data'];
 echo "answers loadedd   <br>";
 switch($message) {
             case '/tits':  
