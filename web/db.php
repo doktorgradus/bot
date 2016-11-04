@@ -1,4 +1,4 @@
 <?php
 require 'rb.php';
-R::setup( 'mysql:host=vps7.exileed.com;dbname=bot_db','root', 'vertrigo');
+R::setup( 'mysql:host=mysql.zzz.com.ua;dbname=kefzce','newusertester', '31k3srSS');
 ?>
