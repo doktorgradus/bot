@@ -1,4 +1,10 @@
-﻿<?php
+<?php
+////////////////////////////////////
+ require 'core/functions.php';     //
+// require 'core/settings.php';      //
+// require 'core/answers.php';       //
+//require 'core/catch.php';         //
+////////////////////////////////////
 $access_token = '281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM';
 $api = 'https://api.telegram.org/bot' . $access_token;
 $output = json_decode(file_get_contents('php://input'), TRUE);
@@ -37,15 +43,8 @@ switch($data){
         sendMessage($chat_id_in, "Ты проголосовал против");
     break;
 }
-function sendMessage($chat_id, $message, $replyMarkup) {
-  file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup);
-}
-////////////////////////////////////
-// require 'core/functions.php';     //
-// require 'core/settings.php';      //
-// require 'core/answers.php';       //
-//require 'core/catch.php';         //
-////////////////////////////////////
+
+
 
 
 /*
