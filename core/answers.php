@@ -9,6 +9,11 @@ switch($message) {
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
     sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
     break;  
            case 'tits':  
@@ -18,6 +23,11 @@ switch($message) {
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
     break;
@@ -152,7 +162,7 @@ switch($message) {
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
-            sendChatAction($chat_id, "upload_document");
+    sendChatAction($chat_id, "upload_document");
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
     break; 
                 case '/tits@phphelperbot':  
@@ -162,6 +172,11 @@ switch($message) {
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
+    sendChatAction($chat_id, "upload_photo");
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
     break;  
