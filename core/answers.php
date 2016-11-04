@@ -93,24 +93,24 @@ switch($message) {
 
 //     // END OF THE /START
             
-        case '/help':
-            include 'commands/help.php'; 
-    break;
-        case '/location':
-            include 'commands/location.php'; 
-    break;
+//         case '/help':
+//             include 'commands/help.php'; 
+//     break;
+//         case '/location':
+//             include 'commands/location.php'; 
+//     break;
         case '/commands':
             include 'commands/commands.php';
     break;
         case '/bash':
             include 'commands/bash.php';
     break;
-        case '/sticker':
-            include 'commands/sticker.php';
-    break;
-        case '/kurs':
-            include 'commands/kurs.php';
-    break;
+//         case '/sticker':
+//             include 'commands/sticker.php';
+//     break;
+//         case '/kurs':
+//             include 'commands/kurs.php';
+//     break;
         case '/calendar':
             include 'commands/calendar.php';
     break;
@@ -126,30 +126,30 @@ switch($message) {
 * in tet-a-tet msg bot find command like /help
 * in GROUP bot find command like /help@phphelperbot
 */
-        case '/game@phphelperbot':
-            include 'commands/game/game_start.php';
-    break;
-        case '/pogoda@phphelperbot':
-            include 'commands/pogoda.php';
-    break;
-        case '/help@phphelperbot':
-            include 'commands/help.php'; 
-    break;
-        case '/location@phphelperbot':
-            include 'commands/location.php'; 
-    break;
+//         case '/game@phphelperbot':
+//             include 'commands/game/game_start.php';
+//     break;
+//         case '/pogoda@phphelperbot':
+//             include 'commands/pogoda.php';
+//     break;
+//         case '/help@phphelperbot':
+//             include 'commands/help.php'; 
+//     break;
+//         case '/location@phphelperbot':
+//             include 'commands/location.php'; 
+//     break;
         case '/commands@phphelperbot':
             include 'commands/commands.php';
     break;
         case '/bash@phphelperbot':
             include 'commands/bash.php';
     break;
-        case '/sticker@phphelperbot':
-            include 'commands/sticker.php';
-    break;
-        case '/kurs@phphelperbot':
-            include 'commands/kurs.php';
-    break;
+//         case '/sticker@phphelperbot':
+//             include 'commands/sticker.php';
+//     break;
+//         case '/kurs@phphelperbot':
+//             include 'commands/kurs.php';
+//     break;
         case '/calendar@phphelperbot':
             include 'commands/calendar.php';
     break;

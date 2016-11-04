@@ -3,7 +3,7 @@
  require 'core/functions.php';     //
  require 'core/settings.php';      //
  require 'core/answers.php';       //
- require 'core/catch.php';         //
+ //require 'core/catch.php';         //
 ////////////////////////////////////
 
 /*
