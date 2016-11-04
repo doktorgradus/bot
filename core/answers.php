@@ -19,6 +19,25 @@ switch($message) {
     $replyMarkup = json_encode($keyboard);
     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
     break;
+
+                case '/gif':  
+     include 'core/commands/gif/gif.php';
+    $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
+    $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard);
+    sendDocument($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+    break;  
+           case 'gif':  
+     include 'core/commands/gif/gif.php';
+    $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
+    $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard);
+    sendDocument($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+    break;
     
 //     //START OF THE GAME
 //         case '[1]':
