@@ -1,5 +1,4 @@
 <?php
-require 'db.php';
 echo "<b>Результат работы бота</b>: ↓ <br><hr>";
 ini_set('default_charset', 'UTF-8'); // кодировка
 $token = "bot281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM";
