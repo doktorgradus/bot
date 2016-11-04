@@ -27,4 +27,7 @@ file_get_contents($GLOBALS['api'] . '/sendDocument?chat_id=' . $chat_id .'&reply
 function sendChatAction($chat_id, $action) {
   file_get_contents($GLOBALS['api'] . '/sendChatAction?chat_id=' . $chat_id .'&action=' . $action);
 }
+function leaveChat($chat_id) {
+  file_get_contents($GLOBALS['api'] . '/LeaveChat?chat_id=' . $chat_id);
+}
 ?>

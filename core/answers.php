@@ -117,9 +117,10 @@ switch($message) {
         case '/sram':
             include 'commands/sram.php';
     break;
-//         case '/pogoda':
-//             include 'commands/pogoda.php';
-//     break;
+        case 'Бот ливни':
+            sendMessage($chat_id,"Как скажешь..",$msgid);
+            LeaveChat($chat_id);
+    break;
 /*
 * LE KOSTIL FIX CATCH WORDS in GROUP
 * in tet-a-tet msg bot find command like /help
