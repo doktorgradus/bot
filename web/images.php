@@ -38,9 +38,9 @@ if ($_POST['submit']) {
 	foreach ($files1 as $file) {
 // echo "result file_id from array<br>";
 $bot_url    = "https://api.telegram.org/".$token;
-$url        = $bot_url . "/sendPhoto?chat_id=276712063";
+$url        = $bot_url . "/sendDocument?chat_id=276712063";
 $post_fields = array(
-	'photo'   => new CURLFile(realpath("/app/web/images/".$file)),
+	'document'   => new CURLFile(realpath("/app/web/images/".$file)),
 );
 
 $ch = curl_init(); 
