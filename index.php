@@ -10,18 +10,31 @@ $data = $callback_query['data'];
 $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
-    case '/test':  
-    $inline_button1 = array("text"=>"Google url","url"=>"http://google.com");
-    $inline_button2 = array("text"=>"work plz","callback_data"=>'/plz');
+    case '/tits':  
+         include 'core/commands/tits/tits.php';
+    $inline_button1 = array("text"=>"👍","callback_data"=>'/up');
+    $inline_button2 = array("text"=>"👎","callback_data"=>'/down');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-     sendMessage($chat_id, "ok", $replyMarkup);
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+    break;
+            case 'tits':  
+         include 'core/commands/tits/tits.php';
+    $inline_button1 = array("text"=>"👍","callback_data"=>'/up');
+    $inline_button2 = array("text"=>"👎","callback_data"=>'/down');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
     break;
 }
 switch($data){
-    case '/plz':
-    sendMessage($chat_id_in, "plz");
+    case '/up':
+    sendMessage($chat_id_in, "Ты проголосовал за");
+    break;
+    case '/down':
+        sendMessage($chat_id_in, "Ты проголосовал против");
     break;
 }
 function sendMessage($chat_id, $message, $replyMarkup) {
