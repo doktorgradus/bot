@@ -1,7 +1,8 @@
 <?php
 echo "answers loadedd   <br>";
 switch($message) {
-            case '/test':  
+            case '/tits':  
+     include 'core/commands/tits/tits.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/voteup');
     $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
