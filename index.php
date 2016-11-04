@@ -1,48 +1,48 @@
 <?php
 ////////////////////////////////////
  require 'core/functions.php';     //
-// require 'core/settings.php';      //
-// require 'core/answers.php';       //
+ require 'core/settings.php';      //
+ require 'core/answers.php';       //
 //require 'core/catch.php';         //
 ////////////////////////////////////
-$access_token = '281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM';
-$api = 'https://api.telegram.org/bot' . $access_token;
-$output = json_decode(file_get_contents('php://input'), TRUE);
-$chat_id = $output['message']['chat']['id'];
-$first_name = $output['message']['chat']['first_name'];
-$message = $output['message']['text'];
-$callback_query = $output['callback_query'];
-$data = $callback_query['data'];
-$message_id = ['callback_query']['message']['message_id'];
-$chat_id_in = $callback_query['message']['chat']['id'];
-switch($message) {
-    case '/tits':  
-         include 'core/commands/tits/tits.php';
-    $inline_button1 = array("text"=>"👍","callback_data"=>'/up');
-    $inline_button2 = array("text"=>"👎","callback_data"=>'/down');
-    $inline_keyboard = [[$inline_button1,$inline_button2]];
-    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard); 
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
-    break;
-            case 'tits':  
-         include 'core/commands/tits/tits.php';
-    $inline_button1 = array("text"=>"👍","callback_data"=>'/up');
-    $inline_button2 = array("text"=>"👎","callback_data"=>'/down');
-    $inline_keyboard = [[$inline_button1,$inline_button2]];
-    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard); 
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
-    break;
-}
-switch($data){
-    case '/up':
-    sendMessage($chat_id_in, "Ты проголосовал за");
-    break;
-    case '/down':
-        sendMessage($chat_id_in, "Ты проголосовал против");
-    break;
-}
+// $access_token = '281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM';
+// $api = 'https://api.telegram.org/bot' . $access_token;
+// $output = json_decode(file_get_contents('php://input'), TRUE);
+// $chat_id = $output['message']['chat']['id'];
+// $first_name = $output['message']['chat']['first_name'];
+// $message = $output['message']['text'];
+// $callback_query = $output['callback_query'];
+// $data = $callback_query['data'];
+// $message_id = ['callback_query']['message']['message_id'];
+// $chat_id_in = $callback_query['message']['chat']['id'];
+// switch($message) {
+//     case '/tits':  
+//          include 'core/commands/tits/tits.php';
+//     $inline_button1 = array("text"=>"👍","callback_data"=>'/up');
+//     $inline_button2 = array("text"=>"👎","callback_data"=>'/down');
+//     $inline_keyboard = [[$inline_button1,$inline_button2]];
+//     $keyboard=array("inline_keyboard"=>$inline_keyboard);
+//     $replyMarkup = json_encode($keyboard); 
+//     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+//     break;
+//             case 'tits':  
+//          include 'core/commands/tits/tits.php';
+//     $inline_button1 = array("text"=>"👍","callback_data"=>'/up');
+//     $inline_button2 = array("text"=>"👎","callback_data"=>'/down');
+//     $inline_keyboard = [[$inline_button1,$inline_button2]];
+//     $keyboard=array("inline_keyboard"=>$inline_keyboard);
+//     $replyMarkup = json_encode($keyboard); 
+//     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+//     break;
+// }
+// switch($data){
+//     case '/up':
+//     sendMessage($chat_id_in, "Ты проголосовал за");
+//     break;
+//     case '/down':
+//         sendMessage($chat_id_in, "Ты проголосовал против");
+//     break;
+// }
 
 
 
