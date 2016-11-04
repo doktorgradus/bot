@@ -23,4 +23,8 @@ file_get_contents($GLOBALS['api'] . '/sendPhoto?chat_id=' . $chat_id .'&reply_to
 function sendDocument($chat_id, $document_id, $msgid,$caption,$replyMarkup) {
 file_get_contents($GLOBALS['api'] . '/sendDocument?chat_id=' . $chat_id .'&reply_to_message_id='.$msgid. '&document=' . $document_id. '&caption=' . $caption. '&reply_markup=' . $replyMarkup);
 }
+
+function sendChatAction($chat_id, $action) {
+  file_get_contents($GLOBALS['api'] . '/sendChatAction?chat_id=' . $chat_id .'&action=' . $action);
+}
 ?>
