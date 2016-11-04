@@ -34,4 +34,9 @@ function leaveChat($chat_id) {
 function answerCallbackQuery($callback_query_id,$text,$show) {
   file_get_contents($GLOBALS['api'] . '/answerCallbackQuery?callback_query_id=' . $callback_query_id .'&text=' . $text .'&show_alert='.$show);
 }
+
+
+function editMessageText($chat_id,$message_id,$msgid,$text) {
+  file_get_contents($GLOBALS['api'] . '/editMessageText?chat_id=' . $chat_id .'&message_id=' . $msgid .'&text='.$text);
+}
 ?>

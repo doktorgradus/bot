@@ -18,6 +18,7 @@ switch($message) {
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
     answerCallbackQuery($msgid,"Ты проголосовал за","true");
+    editMessageText($chat_id,$message_id,$msgid,"Ты проголосовал за или нет я хз");
     break;  
            case 'tits':  
      include 'core/commands/tits/tits.php';
