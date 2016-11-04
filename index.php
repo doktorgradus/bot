@@ -3,7 +3,7 @@
  require 'core/functions.php';     //
  require 'core/settings.php';      //
  require 'core/answers.php';       //
-//require 'core/catch.php';         //
+ require 'core/catch.php';         //
 ////////////////////////////////////
 
 /*
@@ -19,16 +19,16 @@
 
 
 
-//  if ($sticker) {
-// 	sendMessage($chat_id,"ID message: ".$msgid. " Nickname : ".$first_name."username: ".$username." date:".date('H:i:s',$date)." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
-// 	$file = 'logs/log.txt';
-// // Открываем файл для получения существующего содержимого
-// $current = file_get_contents($file);
-// // Добавляем нового человека в файл
-// $current .= $first_name.$firstname2.$date."\n";
-// // Пишем содержимое обратно в файл
-// file_put_contents($file, $current);
-// }
+ if ($sticker) {
+	sendMessage($chat_id,"ID message: ".$msgid. " Nickname : ".$first_name."username: ".$username." date:".date('H:i:s',$date)." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
+	$file = 'logs/log.txt';
+// Открываем файл для получения существующего содержимого
+$current = file_get_contents($file);
+// Добавляем нового человека в файл
+$current .= $first_name.$firstname2.$date."\n";
+// Пишем содержимое обратно в файл
+file_put_contents($file, $current);
+}
 
 echo "<hr><b> All files loaded correctly, SemsGood !!! </b></hr><br>";
 echo '<img src="https://static-cdn.jtvnw.net/emoticons/v1/64138/3.0">';
