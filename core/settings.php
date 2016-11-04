@@ -1,6 +1,7 @@
 <?
 echo "Settings loadedd  <br>";
 // include 'Botan.php'; //disabled
+
 error_reporting(E_ALL);
 date_default_timezone_set('Europe/Moscow');
 $access_token = $_ENV['TELEGRAM_TOKEN'];
@@ -11,6 +12,8 @@ $first_name = $output['message']['chat']['first_name'];
 $msgid = $output['message']['message_id'];
 $date = $output['message']['date'];
 $message = $output['message']['text'];
+$callback_query = $output['callback_query'];
+$data = $callback_query['data'];
 $message_preg = $output['message']['text'];
 $sticker = $output['message']['sticker'];
 $username =$output['message']['chat']['username'];
