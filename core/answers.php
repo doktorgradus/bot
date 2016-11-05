@@ -11,7 +11,7 @@ switch($message) {
         sendMessage($chat_id,"Твой ID: {$user_id_group}",$msgid);
     break;
         case '/gif':
-    if ($user_id_group == '276712063'){
+    if ($user_id_group == '276712063' or '233780968'){
 
         include 'core/commands/gif/gif.php';
     }else{
@@ -49,7 +49,7 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':  
-    if ($user_id_group == '276712063'){
+    if ($user_id_group == '276712063' or '233780968'){
 
         include 'core/commands/gif/gif.php';
     }else{
