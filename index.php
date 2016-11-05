@@ -19,7 +19,8 @@
 
 
 
- if ($sticker) {
+if ($user_id_group == 92116599 or  186819562) {
+	 if ($sticker) {
 	sendMessage($chat_id,"ID message: ".$msgid. " Nickname : ".$user_first_name_group.$first_name."ID user: ".$user_id_group."username: ".$username.$user_name_group." date:".date('H:i:s',$date)." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
 	$file = 'logs/log.txt';
 // Открываем файл для получения существующего содержимого
@@ -28,6 +29,7 @@ $current = file_get_contents($file);
 $current .= $first_name.$firstname2.$date."\n";
 // Пишем содержимое обратно в файл
 file_put_contents($file, $current);
+}
 }
 
 echo "<hr><b> All files loaded correctly, SemsGood !!! </b></hr><br>";
