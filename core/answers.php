@@ -37,7 +37,8 @@ switch($message) {
     break;
 
                 case '/gif':  
-     include 'core/commands/gif/gif.php';
+     if ($user_id_group == '92116599' or  '186819562') {
+    include 'core/commands/gif/gif.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
     $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
@@ -45,9 +46,13 @@ switch($message) {
     $replyMarkup = json_encode($keyboard);
         sendChatAction($chat_id, "upload_document");
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+}else{
+sendMessage($chat_id,"Сорре, но ты не @Denormalization или @ExileeD",$msgid);
+}
     break;  
                     case 'gif':  
-     include 'core/commands/gif/gif.php';
+     if ($user_id_group == '92116599' or  '186819562') {
+    include 'core/commands/gif/gif.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
     $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
@@ -55,6 +60,9 @@ switch($message) {
     $replyMarkup = json_encode($keyboard);
         sendChatAction($chat_id, "upload_document");
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+}else{
+sendMessage($chat_id,"Сорре, но ты не @Denormalization или @ExileeD",$msgid);
+}
     break; 
 
     
@@ -162,13 +170,18 @@ switch($message) {
     break;
                     case '/gif@phphelperbot':  
      include 'core/commands/gif/gif.php';
+     if ($user_id_group == '92116599' or  '186819562') {
+    include 'core/commands/gif/gif.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
     $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
-    sendChatAction($chat_id, "upload_document");
+        sendChatAction($chat_id, "upload_document");
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
+}else{
+sendMessage($chat_id,"Сорре, но ты не @Denormalization или @ExileeD",$msgid);
+}
     break; 
                 case '/tits@phphelperbot':  
      include 'core/commands/tits/tits.php';
