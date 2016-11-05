@@ -19,7 +19,10 @@ $sticker = $output['message']['sticker'];
 $username =$output['message']['chat']['username'];
 $botusername = '@phphelperbot';
 $botusername2 = 'phphelperbot';
-$first_name35 = $output['message']['from']['id'];
+$user_id_group = $output['message']['from']['id'];
+$user_first_name_group = $output['message']['from']['first_name'];
+$user_name_group = $output['message']['from']['username'];
+
 $emoji = array(
   'preload' => json_decode('"\uD83D\uDE03"'), // Улыбочка.
   'weather' => array(
