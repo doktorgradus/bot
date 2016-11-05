@@ -21,7 +21,8 @@ $user_id_group = $output['message']['from']['id'];
 $user_first_name_group = $output['message']['from']['first_name'];
 $user_name_group = $output['message']['from']['username'];
 // VIP USERS
-$vip_users = ["276712062","2","3","4"];
+$vip_users = ["276712063","233780968","3","4"];
+// END VIP USERS
 $emoji = array(
   'preload' => json_decode('"\uD83D\uDE03"'), // Улыбочка.
   'weather' => array(
