@@ -212,6 +212,16 @@
     $photo_id[] = "AgADAgADUasxG3FNzRBypYX7g7aOuQkQSw0ABEjqo-QQdE6bht0AAgI";
     $photo_id[] = "AgADAgADUqsxG3FNzRCFSwI0Oj7Fbe47Sw0ABH3MaXzAVBtnoPAAAgI";
     $photo_id[] = "AgADAgADU6sxG3FNzRDqk2HH3pMze5M4Sw0ABH1j1-vBOhEYHfMAAgI";
+
+
+    
     $rand = array_rand($photo_id);
     $count = count($photo_id);
+    $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
+    $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard);
+    sendChatAction($chat_id, "upload_photo");
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
 ?>

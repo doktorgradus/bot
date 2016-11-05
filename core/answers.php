@@ -2,22 +2,15 @@
 echo "answers loadedd   <br>";
 switch($message) {
         case '/tits':  
-    include 'core/commands/tits/tits_file_id';
-    include 'core/commands/tits/answer.php';
+     include 'core/commands/tits/tits.php';
         break;  
         case 'tits':  
-    include 'core/commands/tits/tits_file_id';
-    include 'core/commands/tits/answer.php';
+     include 'core/commands/tits/tits.php';
         break;
 
         case '/gif':  
-    include 'core/commands/gif/gif_file_id.php';
-    include 'core/commands/gif/answer.php';
+    include 'core/commands/gif/gif.php';
         break;  
-        case 'gif':  
-    include 'core/commands/gif/gif_file_id.php';
-    include 'core/commands/gif/answer.php';
-        break; 
 
         case '/commands':
             include 'commands/commands.php';
@@ -34,6 +27,14 @@ switch($message) {
         case 'Бот ливни':
     include 'commands/leave/leave.php';
         break;
+
+
+
+
+
+
+
+
         case '/commands@phphelperbot':
             include 'commands/commands.php';
     break;
@@ -47,12 +48,10 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':  
-    include 'core/commands/gif/gif_file_id.php';
-    include 'core/commands/gif/answer.php';
+    include 'core/commands/gif/gif.php';
         break; 
             case '/tits@phphelperbot':  
-     include 'core/commands/tits/tits_file_id';
-     include 'core/commands/tits/answer.php';
+     include 'core/commands/tits/tits.php';
         break;  
 
   default:
