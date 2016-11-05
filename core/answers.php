@@ -24,7 +24,7 @@ switch($message) {
             case '/stats':
             // include 'core/commands/tits/tits.php';
             // include 'core/commands/gif/gif.php';
-            sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>212</b> \n Гифок в базе: <b>18</b> \n Вип юзеров: <b>3</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
+            sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>212</b> \n Гифок в базе: <b>18</b> \n Вип юзеров: <b>5</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
         case '/bash':
             include 'commands/bash.php';
