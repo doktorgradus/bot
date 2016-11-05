@@ -8,8 +8,9 @@ switch($message) {
      include 'core/commands/tits/tits.php';
         break;
 
-        case '/gif':  
-    include 'core/commands/gif/gif.php';
+        case '/gif':
+            include 'core/commands/gif/gif.php';
+
         break;  
 
         case '/commands':

@@ -17,7 +17,7 @@
     $document_id[] = "BQADAgADHwADf0p-EKtrAZ-qY4JIAg";
 
     
-if ($user_name_group == '2oneerror' or 'Denormalization' or 'ExileeD') {
+
     $rand = array_rand($document_id);
     $count = count($document_id);
     $inline_button1 = array("text"=>"👍","callback_data"=>'/voteup');
@@ -27,5 +27,5 @@ if ($user_name_group == '2oneerror' or 'Denormalization' or 'ExileeD') {
     $replyMarkup = json_encode($keyboard);
     sendChatAction($chat_id, "upload_document");
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count,$replyMarkup);
-}
+
 ?>
