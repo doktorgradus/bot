@@ -9,8 +9,12 @@ switch($message) {
         break;
 
         case '/gif':
-            include 'core/commands/gif/gif.php';
+    if ($user_name_group == 'Denormalization'){
 
+        include 'core/commands/gif/gif.php';
+    }else{
+        sendMessage($chat_id,"Данная функция тебе не доступна",$msgid);
+    }
         break;  
 
         case '/commands':
@@ -49,8 +53,13 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':  
-    include 'core/commands/gif/gif.php';
-        break; 
+    if ($user_name_group == 'Denormalization'){
+
+        include 'core/commands/gif/gif.php';
+    }else{
+        sendMessage($chat_id,"Данная функция тебе не доступна",$msgid);
+    }
+        break;
             case '/tits@phphelperbot':  
      include 'core/commands/tits/tits.php';
         break;  
