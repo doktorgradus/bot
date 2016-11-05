@@ -9,7 +9,7 @@ switch($message) {
         break;
 
         case '/gif':
-    if ($user_id_group == '233780968'){
+    if ($user_id_group == '276712063'){
 
         include 'core/commands/gif/gif.php';
     }else{
@@ -54,11 +54,11 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':  
-    if ($user_name_group == 'Denormalization'){
+    if ($user_id_group == '276712063'){
 
         include 'core/commands/gif/gif.php';
     }else{
-        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} Тебе недоступна данная функция, лох 😆😆😆");
+        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} Тебе недоступна данная функция, лох 😆");
         //
     }
         break;
