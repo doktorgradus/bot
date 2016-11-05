@@ -20,7 +20,7 @@
 
 
  if ($sticker) {
-	sendMessage($chat_id,"ID message: ".$msgid. " Nickname : ".$first_name."username: ".$username." date:".date('H:i:s',$date)." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
+	sendMessage($chat_id,"ID message: ".$msgid. " Nickname : ".$first_name35.$first_name."username: ".$username." date:".date('H:i:s',$date)." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
 	$file = 'logs/log.txt';
 // Открываем файл для получения существующего содержимого
 $current = file_get_contents($file);
