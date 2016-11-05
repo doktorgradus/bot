@@ -17,7 +17,7 @@
     $document_id[] = "BQADAgADHwADf0p-EKtrAZ-qY4JIAg";
 
     
-if ($user_name_group = 'oneerror' or 'Denormalization' or 'ExileeD') {
+if ($user_name_group = '2oneerror' or 'Denormalization' or 'ExileeD') {
     $rand = array_rand($document_id);
     $count = count($document_id);
     $inline_button1 = array("text"=>"👍","callback_data"=>'/voteup');
