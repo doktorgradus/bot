@@ -11,7 +11,7 @@ switch($message) {
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
     break;
         case '/gif':
-    if ($user_id_group == '276712063' or '233780968'){
+    if(in_array($user_id_group, $vip_users)){
 
         include 'core/commands/gif/gif.php';
     }else{
@@ -19,11 +19,7 @@ switch($message) {
     }
         break;  
         case '/commands':
-        if(in_array($user_id_group, $vip_users)){
             include 'commands/commands.php';
-        }else{
-            sendMessage($chat_id,"Ты не в вип списке",$msgid);
-        }
         break;
             case '/stats':
             // include 'core/commands/tits/tits.php';
@@ -63,7 +59,7 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':  
-    if ($user_id_group == '276712063' or '233780968'){
+    if(in_array($user_id_group, $vip_users)){
 
         include 'core/commands/gif/gif.php';
     }else{
