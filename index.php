@@ -21,7 +21,7 @@
 
 // if ($user_name_group == 'Denormalization') {
 	 if ($sticker) {
-	sendMessage($chat_id,"ID сообщения: ".$msgid. " Имя пользователя : ".$user_first_name_group.$first_name." ID пользователя: ".$user_id_group." Никнейм: ".$username.$user_name_group." date:".date('H:i:s',time())." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
+	sendMessage($chat_id,"ID сообщения: ".$msgid. " Имя пользователя : ".$user_first_name_group.$first_name." ID пользователя: ".$user_id_group." Никнейм: ".$username.$user_name_group." Время: ".date('H:i:s',time())." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
 }
 
 echo "<hr><b> All files loaded correctly, SemsGood !!! </b></hr><br>";
