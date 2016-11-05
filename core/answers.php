@@ -13,7 +13,8 @@ switch($message) {
 
         include 'core/commands/gif/gif.php';
     }else{
-        sendMessage($chat_id,"Данная функция тебе не доступна",$msgid);
+        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} Тебе недоступна данная функция, лох 😆😆😆");
+        //
     }
         break;  
 
@@ -53,7 +54,7 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':  
-    if ($user_name_group == 'Denormalization' or 'ExileeD' or '2oneerror'){
+    if ($user_name_group == 'Denormalization'){
 
         include 'core/commands/gif/gif.php';
     }else{
