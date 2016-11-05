@@ -112,7 +112,7 @@ switch($message) {
         break;  
 
   default:
-            //include 'commands/default.php';
+            //include 'commands/default/default.php';
         break;
 }
 ?>

@@ -19,6 +19,8 @@
     "BQADAgADNgADf0p-EEWtMZy7OHD7Ag",
     "BQADAgADNwADf0p-ENlIWWc7CbBvAg",
     ];
+
+    
     $rand = array_rand($document_id);
     $count_gifs = count($document_id);
 ?>

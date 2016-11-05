@@ -102,13 +102,13 @@ elseif (preg_match_all("/(?<![\w\d])(php|скрипт|машина)(?![\w\d])/ui
     "Расплата близко...",
     "Скоро придет час расплаты..",
     ];
-    
+
     $random = array_rand($answer);
 
     sendMessage($chat_id,$answer[$random]."\nКол-во картинок на этот случай в базе: <b>".$count."</b>");
 
     sendPhoto($chat_id,$photo_id[$random],$msgid,"Тебе достался вариант №: ".$random);
 }else{
-        include 'commands/default.php';
+        include 'commands/default/default.php';
 }
 ?>
