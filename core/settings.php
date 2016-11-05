@@ -22,6 +22,7 @@ $user_first_name_group = $output['message']['from']['first_name'];
 $user_name_group = $output['message']['from']['username'];
 // VIP USERS
 $vip_users = ["276712063","233780968","76484596","298347855","92116599"];
+$count_vips = count($vip_users);
 // END VIP USERS
 $emoji = array(
   'preload' => json_decode('"\uD83D\uDE03"'), // Улыбочка.
