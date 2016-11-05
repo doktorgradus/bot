@@ -37,7 +37,7 @@ switch($message) {
     break;
 
                 case '/gif':  
-     if ($user_id_group == '92116599' or  '186819562') {
+          if ($user_id_group == 92116599 or  186819562) {
     include 'core/commands/gif/gif.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
     $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
@@ -51,7 +51,7 @@ sendMessage($chat_id,"Сорре, но ты не @Denormalization или @Exilee
 }
     break;  
                     case 'gif':  
-     if ($user_id_group == '92116599' or  '186819562') {
+         if ($user_id_group == 92116599 or  186819562) {
     include 'core/commands/gif/gif.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
     $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
@@ -169,8 +169,7 @@ sendMessage($chat_id,"Сорре, но ты не @Denormalization или @Exilee
             include 'commands/sram.php';
     break;
                     case '/gif@phphelperbot':  
-     include 'core/commands/gif/gif.php';
-     if ($user_id_group == '92116599' or  '186819562') {
+     if ($user_id_group == 92116599 or  186819562) {
     include 'core/commands/gif/gif.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/plz');
     $inline_button2 = array("text"=>"👎","callback_data"=>'/votedown');
