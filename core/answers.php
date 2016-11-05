@@ -13,8 +13,8 @@ switch($message) {
 
         include 'core/commands/gif/gif.php';
     }else{
+        sendChatAction($chat_id, "typing");
         sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} тебе недоступна данная функция, лох 😆");
-        //
     }
         break;  
 
@@ -33,15 +33,7 @@ switch($message) {
         case 'Бот ливни':
     include 'commands/leave/leave.php';
         break;
-
-
-
-
-
-
-
-
-        case '/commands@phphelperbot':
+    case '/commands@phphelperbot':
             include 'commands/commands.php';
     break;
         case '/bash@phphelperbot':
@@ -58,8 +50,8 @@ switch($message) {
 
         include 'core/commands/gif/gif.php';
     }else{
-        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} Тебе недоступна данная функция, лох 😆");
-        //
+        sendChatAction($chat_id, "typing");
+        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} тебе недоступна данная функция, лох 😆");
     }
         break;
             case '/tits@phphelperbot':  
