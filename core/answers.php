@@ -9,11 +9,11 @@ switch($message) {
         break;
 
         case '/gif':
-    if ($user_name_group == 'Denormalization'){
+    if ($user_id_group == '233780968'){
 
         include 'core/commands/gif/gif.php';
     }else{
-        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} Тебе недоступна данная функция, лох 😆😆😆");
+        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} тебе недоступна данная функция, лох 😆");
         //
     }
         break;  
