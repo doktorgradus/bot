@@ -51,11 +51,12 @@ curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields); 
  $output = curl_exec($ch);
- var_dump($output);
- // $output = json_decode($output, true);
-// foreach ($output['result'] as $key => $value) {
-// 	echo $value[0]['file_id'].'<br>';
-// }
+ echo $output['result']['photo'][0]['file_id'].'<br>';
+//  var_dump($output);
+//  // $output = json_decode($output, true);
+// // foreach ($output['result'] as $key => $value) {
+// // 	echo $value[0]['file_id'].'<br>';
+// // }
 }
 }
 if ($_POST['refresh']) {
