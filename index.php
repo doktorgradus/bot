@@ -21,16 +21,8 @@
 
 // if ($user_name_group == 'Denormalization') {
 	 if ($sticker) {
-	sendMessage($chat_id,"msgid: ".$msgid. " user_first_name_group|$first_name : ".$user_first_name_group.$first_name."user_id_group: ".$user_id_group."username|user_name_group: ".$username.$user_name_group." date:".date('H:i:s',$date)." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
-// 	$file = 'logs/log.txt';
-// // Открываем файл для получения существующего содержимого
-// $current = file_get_contents($file);
-// // Добавляем нового человека в файл
-// $current .= $first_name.$firstname2.$date."\n";
-// // Пишем содержимое обратно в файл
-// file_put_contents($file, $current);
+	sendMessage($chat_id,"ID сообщения: ".$msgid. " Имя пользователя : ".$user_first_name_group.$first_name." ID пользователя: ".$user_id_group." Никнейм: ".$username.$user_name_group." date:".date('H:i:s',time())." Я вижу ты отправил стикер... <b>не надо</b> так ",$msgid);
 }
-// }
 
 echo "<hr><b> All files loaded correctly, SemsGood !!! </b></hr><br>";
 echo '<img src="https://static-cdn.jtvnw.net/emoticons/v1/64138/3.0">';
