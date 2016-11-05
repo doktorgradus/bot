@@ -53,7 +53,7 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':  
-    if ($user_name_group == 'Denormalization' or 'ExileeD' or 'oneerror'){
+    if ($user_name_group == 'Denormalization' or 'ExileeD' or '2oneerror'){
 
         include 'core/commands/gif/gif.php';
     }else{
