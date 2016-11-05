@@ -19,7 +19,11 @@ switch($message) {
     }
         break;  
         case '/commands':
+        if(in_array($user_id_group, $vip_users)){
             include 'commands/commands.php';
+        }else{
+            sendMessage($chat_id,"Ты не в вип списке",$msgid);
+        }
         break;
             case '/stats':
             // include 'core/commands/tits/tits.php';
