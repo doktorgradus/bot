@@ -1,5 +1,5 @@
 <?php
 return [
-  'token' => '$_ENV['TELEGRAM_TOKEN']',
+  'token' => '123qwe',
   'commands' => 'getMe',
 ];
