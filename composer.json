@@ -10,6 +10,6 @@
 }
 {
     "autoload": {
-        "psr-4": {"Phphelperbot\\": "src/"}
+        "psr-4": {"PhpHelperBot\\": "PhpHelperBot/"}
     }
 }
