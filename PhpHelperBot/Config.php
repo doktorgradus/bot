@@ -7,6 +7,6 @@ class Config{
 		$this->data = $data;
 	}
 public function __get($data){
-	return isser($this->data[$key]) ? $this->data[$key] : null;
+	return isset($this->data[$key]) ? $this->data[$key] : null;
 }
 }
