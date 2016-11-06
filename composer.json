@@ -1,0 +1,9 @@
+{
+    "name": "fart/phptelegrambot",
+    "description": "simple answering machine",
+    "require": {
+        "plinker/redbean": "^0.1.5"
+    },
+    "license": "MiT",
+    "minimum-stability": "stable"
+}
