@@ -1,8 +1,5 @@
 <?php
-$commands = [
-  'getMe' =>  getMeCommand::class,
-  'tits'  =>  TitsCommand::class,
-  'gif'   =>  GifCommand::class,
-];
 return [
+  'token' => '$_ENV['TELEGRAM_TOKEN']',
+  'commands' => 'getMe',
 ];
