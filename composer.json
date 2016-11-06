@@ -6,10 +6,9 @@
         "plinker/redbean": "^0.1.5"
     },
     "license": "MiT",
-    "minimum-stability": "stable"
-}
-{
-    "autoload": {
+    "minimum-stability": "stable",
+	"autoload": {
         "psr-4": {"PhpHelperBot\\": "PhpHelperBot/"}
     }
 }
+
