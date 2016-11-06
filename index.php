@@ -1,4 +1,5 @@
 <?php
+require "../vendor/autoload.php";
 /////////////////////////////////////
  require 'core/functions.php';     //
  require 'core/settings.php';      //
