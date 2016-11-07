@@ -9,7 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 
         if(in_array($user_id_group, $vip_users)){
-        	if (preg_match_all("/(?<![\w\d])(/butts [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
+        	if (preg_match_all("/(?<![\w\d])(butts [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
     	//sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
 	$message = explode(" ", $message);
 	include 'core/commands/buts/buts_id.php';
