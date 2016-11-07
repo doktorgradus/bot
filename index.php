@@ -18,7 +18,6 @@ require __DIR__ . '/vendor/autoload.php';
 	$fp = fopen("banlist.txt", "a"); // Открываем файл в режиме записи 
 	$mytext = "[".date('H:i:s')."]"."admin: {$user_first_name_group} "." user_id: {$message[1]} reason: {$message[2]} \r\n"; // Исходная строка
 	$test = fwrite($fp, $mytext); // Запись в файл
-	if ($test) sendMessage($chat_id,"записали в файл успешно",$msgid);
 	fclose($fp); //Закрытие файла
 	kickchatmember($chat_id,$message[1]);
         	}
