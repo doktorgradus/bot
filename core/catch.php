@@ -105,9 +105,9 @@ elseif (preg_match_all("/(?<![\w\d])(php|скрипт|машина)(?![\w\d])/ui
 
     $random = array_rand($answer);
 
-    sendMessage($chat_id,$answer[$random]."\nКол-во картинок на этот случай в базе: <b>".$count."</b>");
+    sendMessage($chat_id,$answer[$random]."\nКол-во картинок на этот случай в базе: <b>".$count."</b>",$msgid);
 
-    sendPhoto($chat_id,$photo_id[$random],$msgid,"Тебе достался вариант №: ".$random);
+    sendPhoto($chat_id,$photo_id[$random],$msgid,"Тебе достался вариант №: ".$random,$replyMarkup);
 }else{
         include 'commands/default/default.php';
 }
