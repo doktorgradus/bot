@@ -78,6 +78,9 @@ switch($message) {
         case '/sram':
             include 'commands/sram.php';
         break;
+                case '/help':
+            include 'commands/help.php';
+        break;
         case 'Бот ливни':
         if(in_array($user_id_group, $vip_users)){
     include 'commands/leave/leave.php';
@@ -98,6 +101,9 @@ switch($message) {
     case '/id@phphelperbot':
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
     break;
+    case '/help@phphelperbot':
+            include 'commands/help.php';
+        break;
         case '/calendar@phphelperbot':
             include 'commands/calendar.php';
     break;
