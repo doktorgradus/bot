@@ -21,7 +21,7 @@ require __DIR__ . '/vendor/autoload.php';
     $replyMarkup = json_encode($keyboard);
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$photo_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_butts,$replyMarkup);
-        	}
+        	 }
 }
 
         if(in_array($user_id_group, $vip_users)){
