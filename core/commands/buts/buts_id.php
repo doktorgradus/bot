@@ -946,5 +946,5 @@ $buts_id = [
 
 
 $rand = array_rand($buts_id);
-$count_tits = count($buts_id);
+$count_butts = count($buts_id);
 ?>

@@ -66,7 +66,7 @@ switch($message) {
             case '/stats':
             include 'core/commands/tits/tits.php';
             include 'core/commands/gif/gif.php';
-                        sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Жоп в базе: <b>{$buts_id}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
+                        sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Жоп в базе: <b>{$count_butts}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
         case '/bash':
             include 'commands/bash.php';
@@ -89,7 +89,7 @@ switch($message) {
             include 'core/commands/tits/tits.php';
             include 'core/commands/gif/gif.php';
             include 'core/commands/buts/buts_id.php';
-            sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Жоп в базе: <b>{$buts_id}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
+            sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Жоп в базе: <b>{$count_butts}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
         case '/bash@phphelperbot':
             include 'commands/bash.php';
