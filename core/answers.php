@@ -51,12 +51,6 @@ switch($message) {
         case '/bash':
             include 'commands/bash.php';
         break;
-        case 'Kick':
-        if(in_array($user_id_group, $vip_users)){
-    sendMessage($chat_id,"Введите id юзера");
-    include 'commands/kick.php';
-}
-        break;
         case '/calendar':
             include 'commands/calendar.php';
         break;

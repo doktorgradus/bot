@@ -9,7 +9,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 
 
-
+        if(in_array($user_id_group, $vip_users)){
+        	if (preg_match_all("/(?<![\w\d])(кик,[0-9])(?![\w\d])/uim",$message_preg, $mathes)) {
+    include 'commands/kick.php';
+        	}
+}
 //catch non vip users who spam stickers.
 if(!in_array($user_id_group, $vip_users)){
 	 if ($sticker) {

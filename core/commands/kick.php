@@ -1,4 +1,7 @@
 <?php
-if (is_numeric($message)) {
-	sendMessage($chat_id,"Кикнули человека с id {$message}",$msgid);
+if ($message) {
+	sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
+	$message = explode(",", $message);
+	sendMessage($chat_id,"Кикаем юзера {$message[1]}",$msgid);
+	
 }
