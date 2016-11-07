@@ -16,7 +16,7 @@ require __DIR__ . '/vendor/autoload.php';
 	sendMessage($chat_id,"Кикаем юзера {$message[1]}",$msgid);
 	sendMessage($chat_id,"Записали в базу юзера {$message[1]}  дату ".date('H:i:s')."причину {$message[2]}");
 	$fp = fopen("banlist.txt", "a"); // Открываем файл в режиме записи 
-	$mytext = $user_first_name_group.$first_name."[".date('H:i:s')."] user_id: {$message[1]} reason: {$message[2]} \r\n"; // Исходная строка
+	$mytext = "[".date('H:i:s')."]"."admin: {$user_first_name_group} "." user_id: {$message[1]} reason: {$message[2]} \r\n"; // Исходная строка
 	$test = fwrite($fp, $mytext); // Запись в файл
 	if ($test) sendMessage($chat_id,"записали в файл успешно",$msgid);
 	fclose($fp); //Закрытие файла
