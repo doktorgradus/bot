@@ -19,7 +19,7 @@ switch($message) {
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
     sendChatAction($chat_id, "upload_photo");
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$$count_butts,$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
         break; 
                         case 'butts':  
      include 'core/commands/buts/buts_id.php';
@@ -29,7 +29,7 @@ switch($message) {
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
     sendChatAction($chat_id, "upload_photo");
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_tits,$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
         break; 
         case 'tits':  
      include 'core/commands/tits/tits.php';
