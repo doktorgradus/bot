@@ -19,7 +19,7 @@ require __DIR__ . '/vendor/autoload.php';
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
     sendChatAction($chat_id, "upload_photo");
-    sendPhoto($chat_id,$buts_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[2]." из ".$count_butts,$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_butts,$replyMarkup);
         	}
 }
         if(in_array($user_id_group, $vip_users)){
