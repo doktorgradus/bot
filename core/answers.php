@@ -11,6 +11,16 @@ switch($message) {
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_tits,$replyMarkup);
         break;  
+                case '/buts':  
+     include 'core/commands/buts/buts_id.php';
+    $inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
+    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard);
+    sendChatAction($chat_id, "upload_photo");
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_tits,$replyMarkup);
+        break; 
         case 'tits':  
      include 'core/commands/tits/tits.php';
     $inline_button1 = array("text"=>"👍","callback_data"=>'/voteup');
@@ -68,7 +78,8 @@ switch($message) {
             case '/stats@phphelperbot':
             include 'core/commands/tits/tits.php';
             include 'core/commands/gif/gif.php';
-            sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
+            include 'core/commands/buts/buts_id.php';
+            sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Гифок в базе: <b>{$count_gifs}</b> Жоп в базе: <b>{buts_id}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
         case '/bash@phphelperbot':
             include 'commands/bash.php';
