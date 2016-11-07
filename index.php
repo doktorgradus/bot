@@ -14,9 +14,9 @@ require __DIR__ . '/vendor/autoload.php';
     	sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
 	$message = explode(" ", $message);
 	sendMessage($chat_id,"Кикаем юзера {$message[1]}",$msgid);
+		$file_array =  file ("banlist.txt");
+		$num_str =  count($file_array);
 	sendMessage($chat_id,"Записали в базу юзера <b>{$message[1]}</b>  дату [".date('H:i:s')."] причину <b>{$message[2]}</b> \n Посмотреть  - <b><a href='http://telegrambotv2.herokuapp.com/banlist.txt'>банлист</a></b> \n Юзеров в бане - {$num_str}");
-	$file_array =  file ("banlist.txt");
-$num_str =  count($file_array);
 	$fp = fopen("banlist.txt", "a"); // Открываем файл в режиме записи 
 	$mytext = "[".date('H:i:s')."]"."admin: {$user_first_name_group} "." user_id: {$message[1]} reason: {$message[2]} \r\n"; // Исходная строка
 	$test = fwrite($fp, $mytext); // Запись в файл
