@@ -14,6 +14,7 @@ require __DIR__ . '/vendor/autoload.php';
     	sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
 	$message = explode(" ", $message);
 	sendMessage($chat_id,"Кикаем юзера {$message[1]}",$msgid);
+	kickChatMember($chat_id,$message[1]);
         	}
 }
 //catch non vip users who spam stickers.

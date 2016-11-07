@@ -39,4 +39,8 @@ function answerCallbackQuery($callback_query_id,$text,$show) {
 function editMessageText($chat_id,$message_id,$msgid,$text) {
   file_get_contents($GLOBALS['api'] . '/editMessageText?chat_id=' . $chat_id .'&message_id=' . $msgid .'&text='.$text);
 }
+
+function kickChatMember($chat_id,$user_id) {
+  file_get_contents($GLOBALS['api'] . '/kickChatMember?chat_id=' . $chat_id."&user_id=".$user_id);
+}
 ?>
