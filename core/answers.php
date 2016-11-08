@@ -69,6 +69,9 @@ switch($message) {
             include 'core/commands/buts/buts_id.php';
                         sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Задниц в базе: <b>{$count_butts}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
+        case '/vips':
+        sendMessage($chat_id,$vip_users,$msgid);
+        break;
         case '/bash':
             include 'commands/bash.php';
         break;
