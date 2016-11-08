@@ -102,7 +102,7 @@ switch($message) {
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
     break;
     case '/help@phphelperbot':
-            sendMessage($chat_id,"помощь",$msgid);
+            sendMessage($chat_id,"Бот понимает следующие команды: \n <b>/tits</b> - отправляет сиськи. \n <b>/butts</b> - отправляет попу. \n <b>/gif</b> - отправляет гифку. \n Так же можно делать выборки по значению: \n <b>/gif 5</b> - покажет гифку под № <b>5</5> \n <b>/tits 150</b> - покажет сиськи под № <b>150</b> \n <b>/butts 150</b> - покажет задницу под № <b>150</b> \n Посмотреть статистику - /stats",$msgid);
         break;
         case '/calendar@phphelperbot':
             include 'commands/calendar.php';
