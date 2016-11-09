@@ -124,6 +124,9 @@ switch($message) {
         case '/bash@phphelperbot':
             include 'commands/bash.php';
     break;
+    case 'ping Алкаш':
+            sendMessage($chat_id,"ping @Quiss",$msgid);
+    break;
     case '/id@phphelperbot':
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
     break;
