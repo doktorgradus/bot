@@ -16,7 +16,7 @@ require __DIR__ . '/vendor/autoload.php';
 	    // sendMessage($chat_id,"admin list {$output}");
 	    // sendMessage($chat_id,"adminlist.".$output["result"]["user"]["username"]);
 	    foreach ($output["result"] as $human) {
-	    	sendMessage($chat_id,"{$human["user"]["username"]}");
+	    	sendMessage($chat_id,"username: " .'https://telegram.me/' . $human["user"]["username"].' '.'ФИО: '.$human["user"]["first_name"].' '.$human["user"]["last_name"]. " ID: " .$human["user"]["id"]. " Status: " .$human["status"]);
 	    }
 	    
 }
