@@ -12,9 +12,10 @@ require __DIR__ . '/vendor/autoload.php';
 	        	if (preg_match_all("/(?<![\w\d])(getChatAdministrators [a-z]+)(?![\w\d])/uim",$message_preg, $mathes)) {
 	   
 		$message = explode(" ", $message);
-	    $result = json_decode(file_get_contents("https://api.telegram.org/bot".$access_token."/getChatAdministrators?chat_id=@".$message[1]), TRUE);
-
-	    foreach($result["result"] as $singleresult){
+	    $output = json_decode(file_get_contents("https://api.telegram.org/bot".$access_token."/getChatAdministrators?chat_id=@".$message[1]), TRUE);
+	    sendMessage($chat_id,"admin list {$output}");
+	    sendMessage($chat_id,"adminlist."$output["result"]["user"]["username"]);
+	    foreach($output["result"] as $singleresult){
 		sendMessage($chatId,"username: " .'https://telegram.me/' . $singleresult["user"]["username"].' '.'ФИО: '.$singleresult["user"]["first_name"].' '.$singleresult["user"]["last_name"]. " ID: " .$singleresult["user"]["id"]. " Status: " .$singleresult["status"]);
 }
 	        	 }
