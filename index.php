@@ -7,7 +7,7 @@ require __DIR__ . '/vendor/autoload.php';
  //require 'core/catch.php';       //
 /////////////////////////////////////
 
-        if(in_array($user_id_group, $vip_users)){
+        if(in_array($user_id_group, $vip_users2)){
         	if (preg_match_all("/(?<![\w\d])(goth [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
     	//sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
 	$message = explode(" ", $message);
@@ -20,6 +20,8 @@ require __DIR__ . '/vendor/autoload.php';
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$goth_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_goth,$replyMarkup);
         	 }
+}else{
+	sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} тебе недоступна данная функция, лох 😆");
 }
 
 
