@@ -15,7 +15,7 @@ require __DIR__ . '/vendor/autoload.php';
 		
 	    sendMessage($chat_id,"выбираем администраторов группы {$message[1]}");
 	    $result = getChatAdministrators($chat_id,$message[1]);
-	    sendMessage($chat_id,$result);
+	    sendMessage($chat_id,"Список администраторов: {$result}");
 	        	 }
 }
 
