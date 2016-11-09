@@ -10,11 +10,10 @@ require __DIR__ . '/vendor/autoload.php';
 
  		if(in_array($user_id_group, $vip_users)){
 	        	if (preg_match_all("/(?<![\w\d])(getChatAdministrators [a-z]+)(?![\w\d])/uim",$message_preg, $mathes)) {
-	    	sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
+	   
 		$message = explode(" ", $message);
-		
-	    sendMessage($chat_id,"выбираем администраторов группы {$message[1]}");
-	    $result = file_get_contents("https://api.telegram.org/bot281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM/getChatAdministrators?chat_id=@".$message[1]);
+	    $result = json_decode(file_get_contents("https://api.telegram.org/bot".$access_token."/getChatAdministrators?chat_id=@".$message[1]), TRUE);
+
 	    sendMessage($chat_id,"Список администраторов: {$result}");
 	        	 }
 }
