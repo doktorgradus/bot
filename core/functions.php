@@ -43,4 +43,8 @@ function editMessageText($chat_id,$message_id,$msgid,$text) {
 function kickchatmember($chat_id,$user_id) {
   file_get_contents($GLOBALS['api'] . '/kickchatmember?chat_id=' . $chat_id."&user_id=".$user_id);
 }
+
+function sendVideo($chat_id, $video_id, $msgid,$caption) {
+file_get_contents($GLOBALS['api'] . '/sendVideo?chat_id=' . $chat_id .'&reply_to_message_id='.$msgid. '&video=' . $video_id. '&caption=' . $caption);
+}
 ?>
