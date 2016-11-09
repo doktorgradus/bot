@@ -13,8 +13,8 @@ require __DIR__ . '/vendor/autoload.php';
 	   
 		$message = explode(" ", $message);
 	    $output = json_decode(file_get_contents("https://api.telegram.org/bot".$access_token."/getChatAdministrators?chat_id=@".$message[1]), TRUE);
-	    sendMessage($chat_id,"admin list {$output}");
-	    sendMessage($chat_id,"adminlist.".$output["result"]["user"]["username"]);
+	    // sendMessage($chat_id,"admin list {$output}");
+	    // sendMessage($chat_id,"adminlist.".$output["result"]["user"]["username"]);
 	    foreach ($output["result"] as $human) {
 	    	sendMessage($chat_id,"{$human["user"]["username"]}");
 	    }
