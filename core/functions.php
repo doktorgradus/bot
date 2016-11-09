@@ -47,4 +47,8 @@ function kickchatmember($chat_id,$user_id) {
 function sendVideo($chat_id, $video_id, $msgid,$caption) {
 file_get_contents($GLOBALS['api'] . '/sendVideo?chat_id=' . $chat_id .'&reply_to_message_id='.$msgid. '&video=' . $video_id. '&caption=' . $caption);
 }
+
+function getChatAdministrators($chat_id,$group){
+	file_get_contents($GLOBALS['api'] ."/getChatAdministrators?chat_id=".$group);
+}
 ?>

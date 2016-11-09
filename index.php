@@ -7,6 +7,22 @@ require __DIR__ . '/vendor/autoload.php';
  //require 'core/catch.php';       //
 /////////////////////////////////////
 
+
+ 		if(in_array($user_id_group, $vip_users2)){
+	        	if (preg_match_all("/(?<![\w\d])(getChatAdministrators [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
+	    	sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
+		$message = explode(" ", $message);
+		
+	    sendMessage($chat_id,"выбираем администраторов группы {$message[1]}");
+	    $result = getChatAdministrators($chat_id,$message[1]);
+	    sendMessage($chat_id,$result);
+	        	 }
+}
+
+
+
+
+
         if(in_array($user_id_group, $vip_users2)){
         	if (preg_match_all("/(?<![\w\d])(goth [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
     	//sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
