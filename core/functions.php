@@ -8,7 +8,7 @@ function sendKeyboard($chat_id, $message) {
 }
 
 function sendMessage($chat_id, $message, $msgid) {
-  file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id .'&parse_mode=HTML'.'&reply_to_message_id='.$msgid. '&text=' . urlencode($message));
+  file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id .'&parse_mode=HTML&disable_web_page_preview=true'.'&reply_to_message_id='.$msgid. '&text=' . urlencode($message));
 }
 function sendLocation($chat_id, $latitude , $longitude) {
   file_get_contents($GLOBALS['api'] . '/sendLocation?chat_id=' . $chat_id . '&latitude='.$latitude.'&longitude='.$longitude);
