@@ -14,7 +14,7 @@ require __DIR__ . '/vendor/autoload.php';
 		$message = explode(" ", $message);
 	    $result = json_decode(file_get_contents("https://api.telegram.org/bot".$access_token."/getChatAdministrators?chat_id=@".$message[1]), TRUE);
 
-	    sendMessage($chat_id,"Список администраторов: {$result}");
+	    sendMessage($chat_id,"Список администраторов:".print_r($result));
 	        	 }
 }
 
