@@ -82,6 +82,7 @@ switch($message) {
             include 'commands/sram.php';
         break;
         case 'Бот ты тут?':
+        	sendChatAction($chat_id,"upload_video");
             sendVideo($chat_id,"BAADAgAD2AADcU3NEF8_al2S4zpDAg",$msgid,"Ботик на месте!");
         break;
                 case '/help':
