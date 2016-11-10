@@ -197,12 +197,12 @@ switch($message) {
         break; 
         case '/goth@phphelperbot': 
         if(in_array($user_id_group, $vip_users2)){
-	     include 'commands/goth/goth.php';
-	     include 'commands/goth/preloader.php';
-		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_goth,$replyMarkup);
+        	include 'commands/goth/goth.php';
+        	include 'commands/goth/preloader.php';
+        	sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
         }else{
-	include 'commands/permission_denied.php';
-}
+        	include 'commands/permission_denied.php';
+        }
         break;
 
   default:
