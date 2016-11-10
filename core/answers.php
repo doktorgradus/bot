@@ -5,12 +5,13 @@ switch($message) {
      if(in_array($user_id_group, $vip_users2)){
 			
 			include 'core/commands/goth/goth.php';
-    		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
-		    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
-		    $inline_keyboard = [[$inline_button1,$inline_button2]];
-		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-		    $replyMarkup = json_encode($keyboard);
-		    sendChatAction($chat_id, "upload_photo");
+			include 'core/commands/goth/preloader.php';
+    		// $inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
+		    // $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
+		    // $inline_keyboard = [[$inline_button1,$inline_button2]];
+		    // $keyboard=array("inline_keyboard"=>$inline_keyboard);
+		    // $replyMarkup = json_encode($keyboard);
+		    // sendChatAction($chat_id, "upload_photo");
 		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_goth,$replyMarkup);
         	 
 }else{
