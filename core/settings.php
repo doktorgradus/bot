@@ -1,5 +1,6 @@
 <?
 echo "Settings loadedd  <br>";
+define ('SETTINGS');
 // include 'Botan.php'; //disabled
 
 error_reporting(E_ALL);
