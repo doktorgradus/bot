@@ -3,7 +3,6 @@ echo "answers loadedd   <br>";
 switch($message) {
 	case '/goth':  
      if(in_array($user_id_group, $vip_users2)){
-     //if (preg_match_all("/(?<![\w\d])(goth [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
 			$message = explode(" ", $message);
 			include 'core/commands/goth/goth.php';
     		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
@@ -13,7 +12,7 @@ switch($message) {
 		    $replyMarkup = json_encode($keyboard);
 		    sendChatAction($chat_id, "upload_photo");
 		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_goth,$replyMarkup);
-        	 //}
+        	 
 }else{
 	include 'commands/permission_denied.php';
 }
@@ -197,16 +196,15 @@ switch($message) {
         break; 
         case '/goth@phphelperbot': 
         if(in_array($user_id_group, $vip_users2)){
-
-        include 'core/commands/goth/goth.php';
-    	//include 'core/commands/goth/preloader.php';
-    	$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
-    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
-    $inline_keyboard = [[$inline_button1,$inline_button2]];
-    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard);
-    sendChatAction($chat_id, "upload_photo");
-    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_goth,$replyMarkup);
+			$message = explode(" ", $message);
+			include 'core/commands/goth/goth.php';
+    		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
+		    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
+		    $inline_keyboard = [[$inline_button1,$inline_button2]];
+		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+		    $replyMarkup = json_encode($keyboard);
+		    sendChatAction($chat_id, "upload_photo");
+		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_goth,$replyMarkup);
         }else{
         	include 'commands/permission_denied.php';
         }
