@@ -1,6 +1,5 @@
 <?php
 echo "<b>Результат работы бота</b>: ↓ <br><hr>";
-echo json_decode(file_get_contents("php://input"),true);
 ini_set('default_charset', 'UTF-8'); // кодировка
 // ini_set('display_errors', '1');
 $token = "bot281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM";
