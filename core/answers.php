@@ -3,7 +3,7 @@ echo "answers loadedd   <br>";
 switch($message) {
 	case '/goth':  
      if(in_array($user_id_group, $vip_users2)){
-			$message = explode(" ", $message);
+			
 			include 'core/commands/goth/goth.php';
     		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
 		    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
@@ -196,7 +196,7 @@ switch($message) {
         break;
         case '/goth@phphelperbot':  
      if(in_array($user_id_group, $vip_users2)){
-			$message = explode(" ", $message);
+			
 			include 'core/commands/goth/goth.php';
     		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
 		    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
