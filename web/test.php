@@ -3,7 +3,10 @@ echo "<b>Результат работы бота</b>: ↓ <br><hr>";
 ini_set('default_charset', 'UTF-8'); // кодировка
 // ini_set('display_errors', '1');
 $token = "bot281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM";
-echo "Получить file_id  для бота";
+echo "Получить file_id  для бота<br>";
+// echo __DIR__.'<br>';
+// echo __FILE__.'<br>';
+echo "<hr>";
 ?>
 <form method="post">
 	<p><select size="3" multiple name="method">
@@ -18,7 +21,18 @@ echo "Получить file_id  для бота";
    </select>
    	<input type=submit name=button value=send></p>
 </form>
+<form method="post">
+<p><select size="3" multiple name="groups_id">
+    <option value="276712063">@oneerror</option>
+    <option selected value="-1001080942465">@tits_and_flood</option>
+    <option value="276712063">@phpgeeks</option></p>
+    <textarea rows="3" cols="45" name="message">[<?=date('H:i:s')?>] <b>Updated:</b> add some</textarea>
+<input type=submit name=message_send value="Send">
+</form>
 <?php
+if ($_POST['message_send']) {
+	file_get_contents("https://api.telegram.org/bot281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM/sendMessage?chat_id=".$_POST['groups_id']."&text=".$_POST['message']."&parse_mode=HTML");
+}
 if ($_POST['method'] == 'sendPhoto' && $_POST['value'] == 'photo') {
 	$dir    = '/var/www/html/images/';
 $files1 = scandir($dir);
@@ -118,10 +132,6 @@ echo "\","."{$output['result']['video']['file_id']}"."\",".'<br>';
 }
 }
 // var_dump($_POST);
-// echo "<hr>";
-// echo __DIR__.'<br>';
-// echo __FILE__.'<br>';
-// echo "<hr>";
 echo "В папке web/images : <b>".count(scandir('/var/www/html/images/'))."</b> файлов <br>";
 echo "В папке web/document : <b>".count(scandir('/var/www/html/document/'))."</b> файлов <br>";
 echo "В папке web/video : <b>".count(scandir('/var/www/html/video/'))."</b> файлов <br>";
@@ -135,15 +145,6 @@ echo "В папке web/video : <b>".count(scandir('/var/www/html/video/'))."</b
 //         }
 //     }
 // }
-
-if ($_POST['refresh']) {
-	header("Location: /web/images.php");
-}
-if ($_POST['delete']) {
-if (file_exists('./images'))
-foreach (glob('./images/*') as $file)
-unlink($file);
-header("Location: /web/images.php");
-}
 echo "<hr>";
 ?>
+
