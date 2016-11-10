@@ -193,9 +193,9 @@ switch($message) {
     $replyMarkup = json_encode($keyboard);
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
-        break; 
-        case '/goth@phphelperbot': 
-        if(in_array($user_id_group, $vip_users2)){
+        break;
+        case '/goth@phphelperbot':  
+     if(in_array($user_id_group, $vip_users2)){
 			$message = explode(" ", $message);
 			include 'core/commands/goth/goth.php';
     		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
@@ -205,10 +205,12 @@ switch($message) {
 		    $replyMarkup = json_encode($keyboard);
 		    sendChatAction($chat_id, "upload_photo");
 		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_goth,$replyMarkup);
-        }else{
-        	include 'commands/permission_denied.php';
-        }
-        break;
+        	 
+}else{
+	include 'commands/permission_denied.php';
+}
+        
+        
 
   default:
             //include 'commands/default/default.php';
