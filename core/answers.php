@@ -3,7 +3,7 @@ echo "answers loadedd   <br>";
 switch($message) {
 	case '/goth':  
      if(in_array($user_id_group, $vip_users2)){
-     if (preg_match_all("/(?<![\w\d])(goth [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
+     //if (preg_match_all("/(?<![\w\d])(goth [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
 			$message = explode(" ", $message);
 			include 'core/commands/goth/goth.php';
     		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
@@ -12,8 +12,8 @@ switch($message) {
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard);
 		    sendChatAction($chat_id, "upload_photo");
-		    sendPhoto($chat_id,$goth_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_goth,$replyMarkup);
-        	 }
+		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_goth,$replyMarkup);
+        	 //}
 }else{
 	include 'commands/permission_denied.php';
 }
