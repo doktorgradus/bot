@@ -74,7 +74,7 @@ switch($message) {
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_gifs,$replyMarkup);
 
     }else{
-        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} тебе недоступна данная функция, лох 😆");
+        include 'commands/permission_denied.php';
     }
         break;  
         case '/commands':
@@ -85,7 +85,7 @@ switch($message) {
             include 'core/commands/gif/gif.php';
             include 'core/commands/buts/buts_id.php';
             include 'core/commands/goth/goth.php';
-                        sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Задниц в базе: <b>{$count_butts}</b>\n goth ebm: <b>{$count_goth}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
+            sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Задниц в базе: <b>{$count_butts}</b>\n goth ebm: <b>{$count_goth}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
         case '/vips@phphelperbot':
         sendMessage($chat_id,"Список премиум юзеров:".json_encode($vip_users),$msgid);
@@ -153,7 +153,7 @@ switch($message) {
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_gifs,$replyMarkup);
 
     }else{
-        sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} тебе недоступна данная функция, лох 😆");
+        include 'commands/permission_denied.php';
     }
         break;
             case '/tits@phphelperbot':  
@@ -181,11 +181,11 @@ switch($message) {
     sendPhoto($chat_id,$goth_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_goth,$replyMarkup);
         	 }
 }else{
-	sendPhoto($chat_id,"AgADAgAD0KcxG39KfhA-GRnYblV4HWfogQ0ABJ4AAVZdeDP_viniAQABAg",$msgid,"{$user_name_group} тебе недоступна данная функция, лох 😆");
+	include 'commands/permission_denied.php';
 }
         break;
         break;
-                        case '/butts@phphelperbot':  
+             case '/butts@phphelperbot':  
      include 'core/commands/buts/buts_id.php';
     $inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
     $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
@@ -195,6 +195,23 @@ switch($message) {
     sendChatAction($chat_id, "upload_photo");
     sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
         break; 
+        case '/goth@phphelperbot':  
+     if(in_array($user_id_group, $vip_users2)){
+     if (preg_match_all("/(?<![\w\d])(goth [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
+			$message = explode(" ", $message);
+			include 'core/commands/goth/goth.php';
+    		$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
+		    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
+		    $inline_keyboard = [[$inline_button1,$inline_button2]];
+		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+		    $replyMarkup = json_encode($keyboard);
+		    sendChatAction($chat_id, "upload_photo");
+		    sendPhoto($chat_id,$goth_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_goth,$replyMarkup);
+        	 }
+}else{
+	include 'commands/permission_denied.php';
+}
+        break;
 
   default:
             //include 'commands/default/default.php';
