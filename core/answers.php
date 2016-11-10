@@ -1,5 +1,4 @@
 <?php
-define ('ANSWERS');
 echo "answers loadedd   <br>";
 switch($message) {
 	case '/goth':  

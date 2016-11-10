@@ -1,5 +1,4 @@
 <?php
-define ('FUNCTIONS');
 echo "Functions loadedd   <br>";
 /**
  * Функция отправки сообщения sendMessage().
