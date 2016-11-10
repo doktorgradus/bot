@@ -6,5 +6,5 @@
  require 'core/commands/vip/custom_commands/custom_gifs.php';
  require 'core/commands/vip/custom_commands/custom_tits.php';
  require 'core/commands/vip/custom_commands/custom_butts.php';  
-echo "VIP FUNCTION LOADED";
+echo "VIP FUNCTION & CUSTOM_COMMANDS LOADED";
 ?>
