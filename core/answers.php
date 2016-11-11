@@ -80,6 +80,7 @@ switch($message) {
             include 'core/commands/tits/tits.php';
             include 'core/commands/gif/gif.php';
             include 'core/commands/buts/buts_id.php';
+            include 'core/commands/goth/goth.php';
             sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Задниц в базе: <b>{$count_butts}</b>\n goth ebm: <b>{$count_goth}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
         case '/bash@phphelperbot':
