@@ -12,6 +12,15 @@ switch($message) {
 	include 'commands/permission_denied.php';
 }
         break;
+        case 'sendmain -w 4 -p 10 000':
+        
+        $inline_button1 = array("text"=>"Да","callback_data" =>'/yes');
+        $inline_button2 = array("text"=>"Нет","callback_data" =>'/no');
+        $inline_keyboard = [[$inline_button1,$inline_button2]];
+        $keyboard=array("inline_keyboard"=>$inline_keyboard);
+        $replyMarkup = json_encode($keyboard);
+        sendMessage($chat_id,"Вы действительно хотите перевести с кошелька № 4 сумму в <b>10 000</b> рублей в пользу главного кошелька?",$replyMarkup);
+        break;
         case '/tits':  
     include 'core/commands/tits/tits.php';
     include 'core/commands/tits/preloader.php';
