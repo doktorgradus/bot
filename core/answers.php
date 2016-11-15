@@ -19,7 +19,7 @@ switch($message) {
         $inline_keyboard = [[$inline_button1,$inline_button2]];
         $keyboard=array("inline_keyboard"=>$inline_keyboard);
         $replyMarkup = json_encode($keyboard);
-        sendMessage($chat_id,"Вы действительно хотите перевести с кошелька № 4 сумму в <b>10 000</b> рублей в пользу главного кошелька?",$replyMarkup);
+        sendMessage($chat_id,"Вы действительно хотите перевести с кошелька № 4 сумму в <b>10 000</b> рублей в пользу главного кошелька?",$msgid,$replyMarkup);
         break;
         case '/tits':  
     include 'core/commands/tits/tits.php';
