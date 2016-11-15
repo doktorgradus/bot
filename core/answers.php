@@ -45,15 +45,9 @@ switch($message) {
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
     break;
         case '/gif':
-    if(in_array($user_id_group, $vip_users)){
-
     include 'core/commands/gif/gif.php';
     include 'core/commands/gif/preloader.php';
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_gifs,$replyMarkup);
-
-    }else{
-    include 'commands/permission_denied.php';
-    }
         break;  
         case '/commands':
             include 'commands/commands.php';
@@ -108,17 +102,10 @@ switch($message) {
             include 'commands/sram.php';
     break;
         case '/gif@phphelperbot':
-
-    if(in_array($user_id_group, $vip_users)){
-
         include 'core/commands/gif/gif.php';
         include 'core/commands/gif/preloader.php';
     sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_gifs,$replyMarkup);
-
-    }else{
-        include 'commands/permission_denied.php';
-    }
-        break;
+break;
             case '/tits@phphelperbot':  
      include 'core/commands/tits/tits.php';
      include 'core/commands/tits/preloader.php';
