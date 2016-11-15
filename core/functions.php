@@ -7,7 +7,7 @@ function sendKeyboard($chat_id, $message) {
   file_get_contents($GLOBALS['api'] ."/sendmessage?chat_id=".$chat_id."&text=oi&reply_markup=".$reply);
 }
 
-function sendMessage($chat_id, $message, $msgid) {
+function sendMessage($chat_id, $message, $msgid,$replyMarkup) {
   file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id .'&parse_mode=HTML&disable_web_page_preview=true'.'&reply_to_message_id='.$msgid. '&text=' . urlencode($message).'&reply_markup=' . $replyMarkup);
 }
 function sendLocation($chat_id, $latitude , $longitude) {
