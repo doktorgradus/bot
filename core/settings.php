@@ -16,6 +16,7 @@ $callback_query = $output['callback_query'];
 $data = $callback_query['data'];
 $message_preg = $output['message']['text'];
 $sticker = $output['message']['sticker'];
+$photo = $output['message']['photo'];
 $username =$output['message']['chat']['username'];
 $user_id_group = $output['message']['from']['id'];
 $user_first_name_group = $output['message']['from']['first_name'];
