@@ -28,13 +28,21 @@ switch($data){
     $replyMarkup = json_encode($keyboard); 
     sendMessage($chat_id_in,"Текст Правил с-мы из Mysql",$msgid,$replyMarkup);
     break;
-        case '/tovar_list':
+    case '/tovar_list':
     $inline_button1 = array("text"=>"Вернутся назад","callback_data"=>'/back_main');
-    $inline_button2 = array("text"=>"Список товара","callback_data"=>'/tovar_list');
+    $inline_button2 = array("text"=>"Выбрать товар для покупки","callback_data"=>'/tovar_list');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
     sendMessage($chat_id_in,"Список товаров из Mysql",$msgid,$replyMarkup);
+    break;
+    case '/back_main':
+    $inline_button1 = array("text"=>"Список товаров","callback_data"=>'/back_main');
+    $inline_button2 = array("text"=>"Правила с-мы","callback_data"=>'/tovar_list');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Вы в главном меню",$msgid,$replyMarkup);
     break;
 }
 
