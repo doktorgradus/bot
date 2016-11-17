@@ -2,6 +2,9 @@
 echo "answers loadedd   <br>";
 
 switch($message) {
+  case '/myid':
+        sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
+    break;
     case '/commands':
   $replyText = "<pre>Товар:</pre>";
   $replyText .= "<code>/add</code> - Добавить товар\n";
