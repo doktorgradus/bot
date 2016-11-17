@@ -13,19 +13,6 @@ switch($message) {
   $replyText .= "<code>/StopBuy</code> - Остановить все продажи\n";
   $replyText .= "<code>/StartBuy</code> - Востановить продажи\n";
   
-  $replyText .= "<pre>QIWI:</pre>";
-  $replyText .= "<code>/qiwiadd</code> - Добавить в общий список\n";
-  $replyText .= "<code>/qiwidel</code> - Удалить из общего списка\n";
-  $replyText .= "<code>/qiwilist</code> - Посмотреть общий список\n";
-  $replyText .= "<code>/qiwidop</code> - Добавить описание\n";
-  $replyText .= "<code>/mainqiwi</code> - Добавить главный кошелек\n";
-  $replyText .= "<code>/qiwiadmin</code> - Посмотреть главный кошелек\n";
-  $replyText .= "<code>/qiwiset</code> - Назначить админа кошелька\n";
-  $replyText .= "<code>/admsend</code> - Отправить с главного кошелька\n";
-  $replyText .= "<code>/sendmain</code> - Заплатить долг на главный кошель\n";
-  $replyText .= "<code>/stats</code> - Статистика продаж\n";
-  $replyText .= "<code>/balance</code> - Баланс кошелька\n";
-  $replyText .= "<code>/poisk</code> - Поиск платежа\n";
   
   $replyText .= "<pre>ADMINS:</pre>";
   $replyText .= "<code>/admins</code> - Статистика админов\n";
