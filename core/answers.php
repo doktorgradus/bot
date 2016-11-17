@@ -46,10 +46,10 @@ switch($data){
     break;
 
         case '/buy_tovar':
-    $inline_button1 = array("text"=>"Купить товар №1","callback_data"=>'/buy_tovar1');
-    $inline_button2 = array("text"=>"Купить товар №2","callback_data"=>'/buy_tovar2');
-        $inline_button3 = array("text"=>"Купить товар №3","callback_data"=>'/buy_tovar3');
-            $inline_button4 = array("text"=>"Назад в главное меню","callback_data"=>'/back_main');
+    $inline_button1 = array("text"=>"Купить №1","callback_data"=>'/buy_tovar1');
+    $inline_button2 = array("text"=>"Купить №2","callback_data"=>'/buy_tovar2');
+    $inline_button3 = array("text"=>"Купить №3","callback_data"=>'/buy_tovar3');
+    $inline_button4 = array("text"=>"Назад","callback_data"=>'/back_main');
     $inline_keyboard = [[$inline_button1,$inline_button2,$inline_button3,$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
