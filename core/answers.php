@@ -92,7 +92,7 @@ switch($data){
 
             case '/check_payment1':
     $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment1');
-    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/otmenit_oplaty');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
@@ -103,7 +103,7 @@ switch($data){
 
         case '/check_payment2':
     $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment2');
-    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/otmenit_oplaty');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
@@ -114,13 +114,24 @@ switch($data){
 
         case '/check_payment3':
     $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment3');
-    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/otmenit_oplaty');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
     sendMessage($chat_id_in,"Инициализация проверки платежа №3 \n [<b>Сервисное сообщение</b>]:".date('H:i:s')."
 Ошибка проверки платежа #3 - Не корректный реквизиты входа. Сообщите администратору 
 В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
+    break;
+
+            case '/otmenit_oplaty':
+    $inline_button1 = array("text"=>"Я понял","callback_data"=>'/check_payment3');
+    $inline_button2 = array("text"=>"В меню","callback_data"=>'/otmenit_oplaty');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"[<b>Сервисное сообщение</b>]:".date('H:i:s')."
+    Помните, каждый раз когда Вы не оплачиваете товар в указанное время, отменяете покупку товара, у вас накапливаются негативные баллы. Со временем система заблокирует Вас и Вы какое-то время не сможете совершать покупки в нашем магазине. Заказывайте только то, что действительно будите покупать!
+    Вы можете вернуться к главному меню /start или продолжить просмотр наших товаров \n ",$msgid,$replyMarkup);
     break;
 
 }
