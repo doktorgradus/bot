@@ -1,7 +1,7 @@
 <?php
 echo "QIWI SET LOAD21 <br>";
 if(in_array($user_id_group, $vip_users)){
-            if (preg_match_all("/(?<![\w\d])(/qiwiset [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
+            if (preg_match_all("/(?<![\w\d])(qiwiset [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
         //sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
     $message = explode(" ", $message);
     $inline_button1 = array("text"=>"Назад в главное","callback_data" =>'/back_main');

@@ -3,7 +3,7 @@ echo "answers loadedd   <br>";
 
 switch($message) {
 
-  
+
   case '/myid':
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
     break;
@@ -29,8 +29,8 @@ switch($message) {
   $replyText .= "<code>/message</code> - Отправка уведомлений\n";
   $replyText .= "<code>/welcome</code> - Изменить приветствие\n";
   $replyText .= "<code>/topsecret</code> - Изменить создателя бота\n";
-  $replyText .= "<code>/ban</code> - Блокировать пользователя\n";
-  $replyText .= "<code>/kick</code> - Удалить пользователя\n";
+  $replyText .= "<code>ban</code> - Блокировать пользователя\n";
+  $replyText .= "<code>kick</code> - Удалить пользователя\n";
   $replyText .= "<code>/myid</code> - Ваш ид в боте\n";
   $inline_button1 = array("text"=>"В главное меню","callback_data" =>'/back_main');
     $inline_button2 = array("text"=>"Правила","callback_data" =>'/system_rules');
