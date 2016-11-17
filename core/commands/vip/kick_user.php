@@ -1,6 +1,6 @@
 <?php
-            if (preg_match_all("/(?<![\w\d])(kick [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
-    //sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
+            if (preg_match_all("/(?<![\w\d])(/kick [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
+    sendMessage($chat_id,"Ваше сообщение  {$message}",$msgid);
     $message = explode(" ", $message);
     $inline_button1 = array("text"=>"В главное меню","callback_data" =>'/back_main');
     $inline_button2 = array("text"=>"Список команд","callback_data" =>'/commands');
