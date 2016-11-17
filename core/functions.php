@@ -1,7 +1,7 @@
 <?php
 echo "Functions loadedd   <br>";
 function sendMessage($chat_id, $message, $msgid,$replyMarkup) {
-  file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id.'&reply_to_message_id='.$msgid . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup);
+  file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id.'&reply_to_message_id='.$msgid . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup.'&parse_mode=HTML');
 }
 
 /**

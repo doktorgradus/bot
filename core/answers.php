@@ -96,7 +96,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Инициализация проверки платежа №1 \n Сервисное сообщение:".date('H:i:s')."
+    sendMessage($chat_id_in,"Инициализация проверки платежа №1 \n [<b>Сервисное сообщение</b>]:".date('H:i:s')."
 Ошибка проверки платежа #1 - Не корректный реквизиты входа. Сообщите администратору 
 В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
     break;
@@ -107,7 +107,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Инициализация проверки платежа №2 \n Сервисное сообщение:".date('H:i:s')."
+    sendMessage($chat_id_in,"Инициализация проверки платежа №2 \n [<b>Сервисное сообщение</b>]:".date('H:i:s')."
 Ошибка проверки платежа #2 - Не корректный реквизиты входа. Сообщите администратору 
 В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
     break;
@@ -118,7 +118,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Инициализация проверки платежа №3 \n Сервисное сообщение:".date('H:i:s')."
+    sendMessage($chat_id_in,"Инициализация проверки платежа №3 \n [<b>Сервисное сообщение</b>]:".date('H:i:s')."
 Ошибка проверки платежа #3 - Не корректный реквизиты входа. Сообщите администратору 
 В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
     break;
