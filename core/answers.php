@@ -3,8 +3,8 @@ echo "answers loadedd   <br>";
 switch($message) {
 
     case '/start':
-    $inline_button1 = array("text"=>"Правила системы","callback_data" =>'/yes');
-        $inline_button2 = array("text"=>"Список товара","callback_data" =>'/no');
+    $inline_button1 = array("text"=>"Правила системы","callback_data" =>'/rules');
+        $inline_button2 = array("text"=>"Список товара","callback_data" =>'/tovar_list');
         $inline_keyboard = [[$inline_button1,$inline_button2]];
         $keyboard=array("inline_keyboard"=>$inline_keyboard);
         $replyMarkup = json_encode($keyboard);
@@ -143,6 +143,17 @@ break;
   default:
             //include 'commands/default/default.php';
         break;
+}
+
+switch($data){
+    case '/rules':
+    $inline_button1 = array("text"=>"Вернутся назад","callback_data" =>'/back_forward');
+    $inline_button2 = array("text"=>"Список товаров","callback_data" =>'/tovar_list');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard);
+    sendMessage($chat_id_in, "Ты выбрал правила системы:",$msgid,$replyMarkup);
+    break;
 }
 
 ?>
