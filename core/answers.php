@@ -2,7 +2,7 @@
 echo "answers loadedd   <br>";
 switch($message) {
 
-    case '/start':
+    case '/start2':
     $inline_button1 = array("text"=>"Правила системы","callback_data" =>'/yes');
         $inline_button2 = array("text"=>"Список товара","callback_data" =>'/no');
         $inline_keyboard = [[$inline_button1,$inline_button2]];
