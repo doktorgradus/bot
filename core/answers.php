@@ -34,7 +34,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Список товаров из Mysql",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"Список товаров из Mysql:\n 1. Тестовый товар. Цена 200р. кол-во: 3 \n 2 Тестовый товар2. Цена 250р. кол-во: 4",$msgid,$replyMarkup);
     break;
     case '/back_main':
     $inline_button1 = array("text"=>"Список товаров","callback_data"=>'/tovar_list');
