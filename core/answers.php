@@ -1,6 +1,15 @@
 <?php
 echo "answers loadedd   <br>";
 switch($message) {
+
+    case '/start':
+    $inline_button1 = array("text"=>"Правила системы","callback_data" =>'/yes');
+        $inline_button2 = array("text"=>"Список товара","callback_data" =>'/no');
+        $inline_keyboard = [[$inline_button1,$inline_button2]];
+        $keyboard=array("inline_keyboard"=>$inline_keyboard);
+        $replyMarkup = json_encode($keyboard);
+        sendMessage($chat_id,"Ув.пользователь у вас не установлен Qiwi кошелек, для проведения транказций в системе, пожалуйста укажите следующим сообщением /qiwiset его, иначе вы не сможете пользоватся ботом.",$msgid,$replyMarkup);
+    break;
 	case '/goth':  
      if(in_array($user_id_group, $vip_users2)){
 			
