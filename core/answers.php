@@ -12,11 +12,11 @@ switch($message) {
     break;
 	case '/test':  
     $inline_button1 = array("text"=>"Google url","url"=>"http://google.com");
-    $inline_button2 = array("text"=>"work plz","callback_data"=>'/plz');
+    $inline_button2 = array("text"=>"work plz","callback_data"=>'/rules');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-     sendMessage($chat_id, "ok", $replyMarkup);
+     sendMessage($chat_id,"ok",$msgid,$replyMarkup);
     break;
   default:
             //include 'commands/default/default.php';
