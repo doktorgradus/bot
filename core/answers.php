@@ -2,7 +2,7 @@
 echo "answers loadedd   <br>";
 
 switch($message) {
-    case '':
+    case '/commands':
   $replyText = "<pre>Товар:</pre>";
   $replyText .= "<code>/add</code> - Добавить товар\n";
   $replyText .= "<code>/pdel</code> - Удалить товар\n";
