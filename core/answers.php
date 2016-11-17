@@ -2,13 +2,58 @@
 echo "answers loadedd   <br>";
 
 switch($message) {
+    case '':
+  $replyText = "<pre>Товар:</pre>";
+  $replyText .= "<code>/add</code> - Добавить товар\n";
+  $replyText .= "<code>/pdel</code> - Удалить товар\n";
+  $replyText .= "<code>/pview</code> - Просмотреть товар\n";
+  $replyText .= "<code>/catadd</code> - Добавить категорию\n";
+  $replyText .= "<code>/catset</code> - Изменить категорию\n";
+  $replyText .= "<code>/catdel</code> - Удалить категорию\n";
+  $replyText .= "<code>/StopBuy</code> - Остановить все продажи\n";
+  $replyText .= "<code>/StartBuy</code> - Востановить продажи\n";
+  
+  $replyText .= "<pre>QIWI:</pre>";
+  $replyText .= "<code>/qiwiadd</code> - Добавить в общий список\n";
+  $replyText .= "<code>/qiwidel</code> - Удалить из общего списка\n";
+  $replyText .= "<code>/qiwilist</code> - Посмотреть общий список\n";
+  $replyText .= "<code>/qiwidop</code> - Добавить описание\n";
+  $replyText .= "<code>/mainqiwi</code> - Добавить главный кошелек\n";
+  $replyText .= "<code>/qiwiadmin</code> - Посмотреть главный кошелек\n";
+  $replyText .= "<code>/qiwiset</code> - Назначить админа кошелька\n";
+  $replyText .= "<code>/admsend</code> - Отправить с главного кошелька\n";
+  $replyText .= "<code>/sendmain</code> - Заплатить долг на главный кошель\n";
+  $replyText .= "<code>/stats</code> - Статистика продаж\n";
+  $replyText .= "<code>/balance</code> - Баланс кошелька\n";
+  $replyText .= "<code>/poisk</code> - Поиск платежа\n";
+  
+  $replyText .= "<pre>ADMINS:</pre>";
+  $replyText .= "<code>/admins</code> - Статистика админов\n";
+  $replyText .= "<code>/setrole</code> - Назначить\Удалить админа\n";
+  $replyText .= "<code>/dolgprod</code> - Вешаем долг на админа\n";
+  $replyText .= "<code>/clearstat</code> - Обнуляем то что он отдал\n";
+  
+  $replyText .= "<pre>PROCHIE:</pre>";
+  $replyText .= "<code>/message</code> - Отправка уведомлений\n";
+  $replyText .= "<code>/welcome</code> - Изменить приветствие\n";
+  $replyText .= "<code>/topsecret</code> - Изменить создателя бота\n";
+  $replyText .= "<code>/ban</code> - Блокировать пользователя\n";
+  $replyText .= "<code>/kick</code> - Удалить пользователя\n";
+  $replyText .= "<code>/myid</code> - Ваш ид в боте\n";
+  $inline_button1 = array("text"=>"В главное меню","callback_data" =>'/back_main');
+    $inline_button2 = array("text"=>"Правила","callback_data" =>'/system_rules');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id, $replyText,$msgid,$replyMarkup);
+    break;
         case '/start':
         $inline_button1 = array("text"=>"Правила системы","callback_data" =>'/system_rules');
         $inline_button2 = array("text"=>"Список товара","callback_data" =>'/tovar_list');
         $inline_keyboard = [[$inline_button1,$inline_button2]];
         $keyboard=array("inline_keyboard"=>$inline_keyboard);
         $replyMarkup = json_encode($keyboard);
-        sendMessage($chat_id,"Ув.пользователь у вас не установлен Qiwi кошелек, для проведения транказций в системе, пожалуйста укажите следующим сообщением /qiwiset его, иначе вы не сможете пользоватся ботом. \n Если у вас нет кошелька вызовите команду /qiwihowto",$msgid,$replyMarkup);
+        sendMessage($chat_id,"Ув.пользователь у вас не установлен Qiwi кошелек, для проведения транзакций в системе, пожалуйста укажите следующим сообщением /qiwiset его, иначе вы не сможете пользоватся ботом. \n Если у вас нет кошелька вызовите команду /qiwihowto",$msgid,$replyMarkup);
     break;
      case '/qiwihowto':  
     $inline_button1 = array("text"=>"Офф.сайт QIWI","url"=>"https://qiwi.com/");
