@@ -124,8 +124,8 @@ switch($data){
     break;
 
             case '/otmenit_oplaty':
-    $inline_button1 = array("text"=>"Я понял","callback_data"=>'/check_payment3');
-    $inline_button2 = array("text"=>"В меню","callback_data"=>'/otmenit_oplaty');
+    $inline_button1 = array("text"=>"Я понял","callback_data"=>'/back_main');
+    $inline_button2 = array("text"=>"В меню","callback_data"=>'/back_main');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
