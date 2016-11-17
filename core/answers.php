@@ -46,9 +46,11 @@ switch($data){
     break;
 
         case '/buy_tovar':
-    $inline_button1 = array("text"=>"Список товаров длинная кнопка","callback_data"=>'/tovar_list');
-    $inline_button2 = array("text"=>"Правила с-мы длинная кнопка","callback_data"=>'/system_rules');
-    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $inline_button1 = array("text"=>"Купить товар №1","callback_data"=>'/buy_tovar1');
+    $inline_button2 = array("text"=>"Купить товар №2","callback_data"=>'/buy_tovar2');
+        $inline_button3 = array("text"=>"Купить товар №3","callback_data"=>'/buy_tovar3');
+            $inline_button4 = array("text"=>"Назад в главное меню","callback_data"=>'/back_main');
+    $inline_keyboard = [[$inline_button1,$inline_button2,$inline_button3,$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
     sendMessage($chat_id_in,"Список товаров из Mysql:\n 1. Тестовый товар. Цена 200р. кол-во: 3 \n 2. Тестовый товар2. Цена 250р. кол-во: 4 \n 3. Тестовый товар3. Цена 300р. кол-во: 150 \n",$msgid,$replyMarkup);
