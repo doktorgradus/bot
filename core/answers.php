@@ -57,7 +57,7 @@ switch($data){
     break;
 
         case '/buy_tovar1':
-    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/tovar_list');
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment1');
     $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
@@ -68,7 +68,7 @@ switch($data){
 Конечная дата платежа ".date('H:i:s'),$msgid,$replyMarkup);
     break;
             case '/buy_tovar2':
-    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/tovar_list');
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment2');
     $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
@@ -79,7 +79,7 @@ switch($data){
 Конечная дата платежа ".date('H:i:s'),$msgid,$replyMarkup);
     break;
             case '/buy_tovar3':
-    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/tovar_list');
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment3');
     $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
@@ -89,5 +89,39 @@ switch($data){
 ВНИМАНИЕ!! Время отведенное на оплату заказа - 30 минут.
 Конечная дата платежа ".date('H:i:s'),$msgid,$replyMarkup);
     break;
+
+            case '/check_payment1':
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment1');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Инициализация проверки платежа №1 \n Сервисное сообщение:".date('H:i:s')."
+Ошибка проверки платежа #1 - Не корректный реквизиты входа. Сообщите администратору 
+В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
+    break;
+
+        case '/check_payment2':
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment2');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Инициализация проверки платежа №2 \n Сервисное сообщение:".date('H:i:s')."
+Ошибка проверки платежа #2 - Не корректный реквизиты входа. Сообщите администратору 
+В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
+    break;
+
+        case '/check_payment3':
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/check_payment3');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Инициализация проверки платежа №3 \n Сервисное сообщение:".date('H:i:s')."
+Ошибка проверки платежа #3 - Не корректный реквизиты входа. Сообщите администратору 
+В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
+    break;
+
 }
 
