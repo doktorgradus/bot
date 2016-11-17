@@ -11,6 +11,13 @@ if(in_array($user_id_group, $vip_users)){
 	fclose($fp); //Закрытие файла
 	kickchatmember($chat_id,$message[1]);
         	}
+}else{
+	$inline_button1 = array("text"=>"В главное меню","callback_data" =>'/back_main');
+    $inline_button2 = array("text"=>"Правила","callback_data" =>'/system_rules');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+	sendMessage($chat_id,"Ты не Администратор",$msgid,$replyMarkup);
 }
 
 ?>

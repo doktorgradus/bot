@@ -12,6 +12,8 @@ $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
 $msgid = $output['message']['message_id'];
 $user_id_group = $output['message']['from']['id'];
+$vip_users = ["276712063"];
+$vip_users2 =["233780968","276712063"];
 // // include 'Botan.php'; //disabled
 
 // error_reporting(E_ALL);
