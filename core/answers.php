@@ -42,7 +42,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Правила системы",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"Правила системы2",$msgid,$replyMarkup);
     break;
 }
 
