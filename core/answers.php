@@ -58,7 +58,7 @@ switch($data){
 
         case '/buy_tovar1':
     $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/tovar_list');
-    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/system_rules');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
