@@ -1,23 +1,12 @@
 <?php
-if(in_array($user_id_group, $vip_users)){
-        	if (preg_match_all("/(?<![\w\d])(kick [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
-    	//sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
-	$message = explode(" ", $message);
-	sendMessage($chat_id,"Кикаем юзера {$message[1]}",$msgid);
-	sendMessage($chat_id,"Записали в базу юзера <b>{$message[1]}</b>  дату [".date('H:i:s')."] причину <b>{$message[2]}</b> \n Посмотреть - <a href='http://telegrambotv2.herokuapp.com/banlist.txt'>банлист</a>");
-	$fp = fopen("banlist.txt", "a"); // Открываем файл в режиме записи 
-	$mytext = "[".date('H:i:s')."]"."admin: {$user_first_name_group} "." user_id: {$message[1]} reason: {$message[2]} \r\n"; // Исходная строка
-	$test = fwrite($fp, $mytext); // Запись в файл
-	fclose($fp); //Закрытие файла
-	kickchatmember($chat_id,$message[1]);
-        	}
-}else{
-	$inline_button1 = array("text"=>"В главное меню","callback_data" =>'/back_main');
-    $inline_button2 = array("text"=>"Правила","callback_data" =>'/system_rules');
+            if (preg_match_all("/(?<![\w\d])(kick [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
+    //sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
+    $message = explode(" ", $message);
+    $inline_button1 = array("text"=>"В главное меню","callback_data" =>'/back_main');
+    $inline_button2 = array("text"=>"Список команд","callback_data" =>'/commands');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard); 
-	sendMessage($chat_id,"Ты не Администратор",$msgid,$replyMarkup);
-}
-
-?>
+    $replyMarkup = json_encode($keyboard);
+    //sendPhoto($chat_id,$photo_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_tits,$replyMarkup);
+    sendMessage($chat_id,"Вы забанили след. юзера ".$message[1],$msgid,$replyMarkup);
+             }?>
