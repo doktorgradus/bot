@@ -62,10 +62,32 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Инициализация покупки товара №1 \n Оплатите 1000 рублей на кошелек +380999536109 и обязательно укажите комментарий платежа 2949
+    sendMessage($chat_id_in,"Инициализация покупки товара №1 \n Оплатите 200 рублей на кошелек +380999536109 и обязательно укажите комментарий платежа 2949
 
 ВНИМАНИЕ!! Время отведенное на оплату заказа - 30 минут.
-Конечная дата платежа".date('H:i:s'),$msgid,$replyMarkup);
+Конечная дата платежа ".date('H:i:s'),$msgid,$replyMarkup);
+    break;
+            case '/buy_tovar2':
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/tovar_list');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Инициализация покупки товара №2 \n Оплатите 250 рублей на кошелек +380999536109 и обязательно укажите комментарий платежа 1423
+
+ВНИМАНИЕ!! Время отведенное на оплату заказа - 30 минут.
+Конечная дата платежа ".date('H:i:s'),$msgid,$replyMarkup);
+    break;
+            case '/buy_tovar3':
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/tovar_list');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/back_main');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Инициализация покупки товара №3 \n Оплатите 300 рублей на кошелек +380999536109 и обязательно укажите комментарий платежа 2711
+
+ВНИМАНИЕ!! Время отведенное на оплату заказа - 30 минут.
+Конечная дата платежа ".date('H:i:s'),$msgid,$replyMarkup);
     break;
 }
 
