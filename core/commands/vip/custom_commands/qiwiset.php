@@ -10,7 +10,7 @@ if(in_array($user_id_group, $vip_users)){
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
     //sendPhoto($chat_id,$photo_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_tits,$replyMarkup);
-    sendMessage($chat_id,"Вы успешно установили следующих кошелек ".$message[1],$msgid,$replyMarkup);
+    sendMessage($chat_id,"Вы успешно установили следующий кошелек ".$message[1],$msgid,$replyMarkup);
              }
 }
 
