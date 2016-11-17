@@ -55,5 +55,17 @@ switch($data){
     $replyMarkup = json_encode($keyboard); 
     sendMessage($chat_id_in,"Список товаров из Mysql:\n 1. Тестовый товар. Цена 200р. кол-во: 3 \n 2. Тестовый товар2. Цена 250р. кол-во: 4 \n 3. Тестовый товар3. Цена 300р. кол-во: 150 \n",$msgid,$replyMarkup);
     break;
+
+        case '/buy_tovar1':
+    $inline_button1 = array("text"=>"Проверить оплату","callback_data"=>'/tovar_list');
+    $inline_button2 = array("text"=>"Отменить","callback_data"=>'/system_rules');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Инициализация покупки товара №1 \n Оплатите 1000 рублей на кошелек +380999536109 и обязательно укажите комментарий платежа 2949
+
+ВНИМАНИЕ!! Время отведенное на оплату заказа - 30 минут.
+Конечная дата платежа".date('H:i:s'),$msgid,$replyMarkup);
+    break;
 }
 
