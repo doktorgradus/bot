@@ -143,7 +143,7 @@ switch($data){
     // $inline_keyboard = [[$inline_button1,$inline_button2]];
     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
     // $replyMarkup = json_encode($keyboard); 
-    if ($user_name_group_call2 == 'Quiss') {
+    if(in_array($user_name_group_call2, $ban_users)){
   sendMessage($chat_id_in,"Иди нахуй Квис, тебе нельзя голосовать",$msgid);
 }else{
   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
@@ -155,7 +155,7 @@ switch($data){
     // $inline_keyboard = [[$inline_button1,$inline_button2]];
     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
     // $replyMarkup = json_encode($keyboard); 
-    if ($user_name_group_call2 == 'Quiss') {
+    if(in_array($user_name_group_call2, $ban_users)){
   sendMessage($chat_id_in,"Иди нахуй Квис, тебе нельзя голосовать",$msgid);
 }else{
   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👎 за {$nice} ",$msgid);
