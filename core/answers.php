@@ -142,32 +142,32 @@ break;
             //include 'commands/default/default.php';
         break;
 }
-switch($data){
-    case '/voteup':
-    // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_up');
-    // $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_up');
-    // $inline_keyboard = [[$inline_button1,$inline_button2]];
-    // $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    // $replyMarkup = json_encode($keyboard); 
-    if(in_array($user_name_group_call2, $ban_users)){
-  sendMessage($chat_id_in,"Иди нахуй @{$user_name_group_call2} тебе нельзя голосовать \n Посмотреть банлист /banlist",$msgid);
-}else{
-  sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
-  unset($output);
-}
-    break;
-    case '/votedown':
-    // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
-    // $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_down');
-    // $inline_keyboard = [[$inline_button1,$inline_button2]];
-    // $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    // $replyMarkup = json_encode($keyboard); 
-    if(in_array($user_name_group_call2, $ban_users)){
-  sendMessage($chat_id_in,"Иди нахуй @{$user_name_group_call2} тебе нельзя голосовать \n Посмотреть банлист /banlist",$msgid);
-}else{
-  sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👎 за {$nice} ",$msgid);
-}
-    break;
-}
+// switch($data){
+//     case '/voteup':
+//     // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_up');
+//     // $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_up');
+//     // $inline_keyboard = [[$inline_button1,$inline_button2]];
+//     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
+//     // $replyMarkup = json_encode($keyboard); 
+//     if(in_array($user_name_group_call2, $ban_users)){
+//   sendMessage($chat_id_in,"Иди нахуй @{$user_name_group_call2} тебе нельзя голосовать \n Посмотреть банлист /banlist",$msgid);
+// }else{
+//   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
+//   unset($output);
+// }
+//     break;
+//     case '/votedown':
+//     // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
+//     // $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_down');
+//     // $inline_keyboard = [[$inline_button1,$inline_button2]];
+//     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
+//     // $replyMarkup = json_encode($keyboard); 
+//     if(in_array($user_name_group_call2, $ban_users)){
+//   sendMessage($chat_id_in,"Иди нахуй @{$user_name_group_call2} тебе нельзя голосовать \n Посмотреть банлист /banlist",$msgid);
+// }else{
+//   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👎 за {$nice} ",$msgid);
+// }
+//     break;
+// }
 
 ?>
