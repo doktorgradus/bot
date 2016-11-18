@@ -4,7 +4,8 @@
 require 'core/functions.php';               //
 require 'core/settings.php';                //
 require 'core/answers.php';                 //
- //require 'core/catch.php';                //
+ //require 'core/catch.php';  				//
+require 'libs/db.php';		                //
 require 'core/commands/vip/loader.php';     //
 //////////////////////////////////////////////
 if(!in_array($user_id_group, $vip_users)){
