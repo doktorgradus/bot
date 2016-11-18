@@ -26,9 +26,9 @@ $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
 $chat_id_in2 = $callback_query['message']['from']['id'];
 $username_call = $callback_query['message']['chat']['username'];
-$username_call2 = $callback_query['message']['from']['username'];
+$username_call2 = $callback_query['id']['from']['username'];
 $user_name_group_call = $callback_query['message']['from']['username'];
-$user_name_group_call2 = $callback_query['message']['username'];
+$user_name_group_call2 = $callback_query['id']['from']['username'];
 // VIP USERS
 $vip_users = ["276712063","233780968","76484596","298347855","92116599","161643604","194125072","247069389","175754334"];
 
