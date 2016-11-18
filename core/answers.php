@@ -144,7 +144,7 @@ switch($data){
     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
     // $replyMarkup = json_encode($keyboard); 
     if ($user_name_group_call2 == 'oneerror') {
-  sendMessage($chat_id_in,"иди нахуй Квис",$msgid)
+  sendMessage($chat_id_in,"иди нахуй Квис",$msgid);
 }else{
   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
 }
