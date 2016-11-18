@@ -138,20 +138,20 @@ break;
 }
 switch($data){
     case '/voteup':
-    $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_up');
-    $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_up');
-    $inline_keyboard = [[$inline_button1,$inline_button2]];
-    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"ИД сообщения: {$msgid} {$user_first_name_group} {$first_name} {$username} {$user_name_group} {$user_id_group} {$message_id} {$chat_id_in} {$username_call} {$user_name_group_call} Вы только что проголосовами положительно",$msgid,$replyMarkup);
+    // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_up');
+    // $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_up');
+    // $inline_keyboard = [[$inline_button1,$inline_button2]];
+    // $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    // $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Пользователь {$username_call} с ID: {$chat_id_in} в {$user_name_group_call}  Проголосовал 👍",$msgid);
     break;
     case '/votedown':
-    $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
-    $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_down');
-    $inline_keyboard = [[$inline_button1,$inline_button2]];
-    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Вы только что проголосовами \n вы можете изменить свой голос при желании",$msgid,$replyMarkup);
+    // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
+    // $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_down');
+    // $inline_keyboard = [[$inline_button1,$inline_button2]];
+    // $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    // $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Пользователь {$username_call} с ID: {$chat_id_in} в {$user_name_group_call}  Проголосовал 👎",$msgid);
     break;
 }
 ?>
