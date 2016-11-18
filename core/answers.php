@@ -2,7 +2,7 @@
 echo "answers loadedd   <br>";
 switch($message) {
   case '/banlist':
-  sendMessage($chat_id,$ban_users,$msgid,$replyMarkup);
+  sendMessage($chat_id,"Список забаненых хуесосов {$ban_users}",$msgid,$replyMarkup);
   break;
 
 	case '/goth':  
