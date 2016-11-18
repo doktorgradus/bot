@@ -144,7 +144,7 @@ switch($data){
     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
     // $replyMarkup = json_encode($keyboard); 
     if (count ($user_name_group_call2) > 5) {
-  sendMessage($chat_id_in,"Не спамь сучара",$msgid);
+  sleep(60);
 }else{
   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
 }
