@@ -1,5 +1,5 @@
 <?php
 require 'libs/rb.php';
-echo "DB inluaded";
+echo "DB inluaded <br>";
 R::setup( 'mysql:host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'].$_ENV['DB_LOGIN'], $_ENV['DB_PASSWORD']);
 ?>

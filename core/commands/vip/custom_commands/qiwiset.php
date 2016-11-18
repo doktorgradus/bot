@@ -15,4 +15,3 @@ if(in_array($user_id_group, $vip_users)){
 }
 
 ?>
-qi
