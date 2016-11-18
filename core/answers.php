@@ -143,7 +143,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"ИД сообщения: {$msgid}{$user_first_name_group} { $first_name} {$username}{$user_name_group} Вы только что проголосовами положительно",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"ИД сообщения: {$msgid} {$user_first_name_group} {$first_name} {$username} {$user_name_group} {$user_id_group} Вы только что проголосовами положительно",$msgid,$replyMarkup);
     break;
     case '/votedown':
     $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
