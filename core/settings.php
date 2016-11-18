@@ -21,6 +21,7 @@ $username =$output['message']['chat']['username'];
 $user_id_group = $output['message']['from']['id'];
 $user_first_name_group = $output['message']['from']['first_name'];
 $user_first_name_group1 = $output['callback_query']['from']['first_name'];
+$nice = $output['callback_query']['message']['caption'];
 $user_name_group = $output['message']['from']['username'];
 $bot_id = '281890161';
 $message_id = ['callback_query']['message']['message_id'];
