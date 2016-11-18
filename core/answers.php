@@ -143,7 +143,11 @@ switch($data){
     // $inline_keyboard = [[$inline_button1,$inline_button2]];
     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
     // $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @ {$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
+    if (count ($output['callback_query']) > 5) {
+  die();
+}else{
+  sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
+}
     break;
     case '/votedown':
     // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
@@ -151,7 +155,8 @@ switch($data){
     // $inline_keyboard = [[$inline_button1,$inline_button2]];
     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
     // $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @ {$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в [<b> {$nice2} </b>]  Проголосовал 👎 за {$nice} ",$msgid);
+    sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в [<b> {$nice2} </b>]  Проголосовал 👎 за {$nice} ",$msgid);
     break;
 }
+
 ?>
