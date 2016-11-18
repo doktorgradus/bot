@@ -2,14 +2,6 @@
 echo "answers loadedd   <br>";
 switch($message) {
 
-    // case '/start2':
-    // $inline_button1 = array("text"=>"Правила системы","callback_data" =>'/yes');
-    //     $inline_button2 = array("text"=>"Список товара","callback_data" =>'/no');
-    //     $inline_keyboard = [[$inline_button1,$inline_button2]];
-    //     $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    //     $replyMarkup = json_encode($keyboard);
-    //     sendMessage($chat_id,"Ув.пользователь у вас не установлен Qiwi кошелек, для проведения транказций в системе, пожалуйста укажите следующим сообщением /qiwiset его, иначе вы не сможете пользоватся ботом.",$msgid,$replyMarkup);
-    // break;
 	case '/goth':  
      if(in_array($user_id_group, $vip_users2)){
 			
@@ -144,5 +136,22 @@ break;
             //include 'commands/default/default.php';
         break;
 }
-
+switch($data){
+    case '/voteup':
+    $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_up');
+    $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_up');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Вы только что проголосовами \n вы можете изменить свой голос при желании",$msgid,$replyMarkup);
+    break;
+    case '/votedown':
+    $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
+    $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_down');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"Вы только что проголосовами \n вы можете изменить свой голос при желании",$msgid,$replyMarkup);
+    break;
+}
 ?>
