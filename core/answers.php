@@ -25,22 +25,22 @@ switch($message) {
         case '/tits':  
     include 'core/commands/tits/tits.php';
     include 'core/commands/tits/preloader.php';
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         break;  
                 case '/butts':  
     include 'core/commands/buts/buts_id.php';
     include 'core/commands/buts/preloader.php';
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         break; 
                 case 'butts':  
     include 'core/commands/buts/buts_id.php';
     include 'core/commands/buts/preloader.php';
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         break; 
         case 'tits':  
     include 'core/commands/tits/tits.php';
     include 'core/commands/tits/preloader.php';
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_tits,$replyMarkup);
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         break;
     case '/id':
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
@@ -48,7 +48,7 @@ switch($message) {
         case '/gif':
     include 'core/commands/gif/gif.php';
     include 'core/commands/gif/preloader.php';
-    sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_gifs,$replyMarkup);
+    sendDocument($chat_id,$document_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         break;  
         case '/commands':
             include 'commands/commands.php';
@@ -105,25 +105,25 @@ switch($message) {
         case '/gif@phphelperbot':
         include 'core/commands/gif/gif.php';
         include 'core/commands/gif/preloader.php';
-    sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_gifs,$replyMarkup);
+    sendDocument($chat_id,$document_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
 break;
             case '/tits@phphelperbot':  
      include 'core/commands/tits/tits.php';
      include 'core/commands/tits/preloader.php';
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_tits,$replyMarkup);
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         break;  
        
              case '/butts@phphelperbot':  
      include 'core/commands/buts/buts_id.php';
      include 'core/commands/buts/preloader.php';
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_butts,$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         break;
         case '/goth@phphelperbot':  
      if(in_array($user_id_group, $vip_users2)){
 			
 			include 'core/commands/goth/goth.php';
 			include 'core/commands/goth/preloader.php';
-		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: ".$rand." из ".$count_goth,$replyMarkup);
+		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
         	 
 }else{
 	include 'commands/permission_denied.php';
