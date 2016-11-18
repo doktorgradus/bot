@@ -143,7 +143,7 @@ switch($data){
     // $inline_keyboard = [[$inline_button1,$inline_button2]];
     // $keyboard=array("inline_keyboard"=>$inline_keyboard);
     // $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Пользователь {$username_call} с ID: {$chat_id_in} в {$user_name_group_call}  Проголосовал 👍",$msgid);
+    sendMessage($chat_id_in,"Пользователь {$$username_call2} {$username_call} с ID: {$chat_id_in} {$chat_id_in2} в {$user_name_group_call}  Проголосовал 👍",$msgid);
     break;
     case '/votedown':
     // $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
