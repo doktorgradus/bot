@@ -153,5 +153,21 @@ switch($data){
     $replyMarkup = json_encode($keyboard); 
     sendMessage($chat_id_in,"Вы только что проголосовами \n вы можете изменить свой голос при желании",$msgid,$replyMarkup);
     break;
+        case '/confirm_up':
+    $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_up');
+    $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_up');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"$username | $user_name_group проголосовал положительно",$msgid,$replyMarkup);
+    break;
+    case '/decline_up':
+    $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
+    $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_down');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id_in,"$username | $user_name_group проголосовал отрицательно",$msgid,$replyMarkup);
+    break;
 }
 ?>
