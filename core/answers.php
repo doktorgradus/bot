@@ -4,6 +4,9 @@ switch($message) {
   case '/banlist':
   sendMessage($chat_id,"Список забаненых хуесосов ".json_encode($ban_users),$msgid,$replyMarkup);
   break;
+    case '/banlist@phphelperbot':
+  sendMessage($chat_id,"Список забаненых хуесосов ".json_encode($ban_users),$msgid,$replyMarkup);
+  break;
 
 	case '/goth':  
      if(in_array($user_id_group, $vip_users2)){
