@@ -35,9 +35,9 @@ $user_name_group_call = $callback_query['message']['from']['username'];
 $user_name_group_call2 = $callback_query['from']['username'];
 // VIP USERS
 $ban_users = ["Quiss"];
-$vip_users = ["276712063","233780968","76484596","298347855","92116599","161643604","194125072","247069389","175754334","92116599"];
+$vip_users = ["276712063","233780968","76484596","298347855","92116599","161643604","194125072","247069389","175754334","92116599","155638789"];
 
-$vip_users2 =["233780968","276712063","92116599"]; // Denormalization user_id 4 goth 
+$vip_users2 =["233780968","276712063","92116599","155638789"]; // Denormalization user_id 4 goth 
 $count_vips = count($vip_users);
 // END VIP USERS
 $emoji = array(
