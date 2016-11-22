@@ -10,7 +10,7 @@ if(in_array($user_id_group, $vip_users)){
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard);
     //sendPhoto($chat_id,$photo_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_tits,$replyMarkup);
-    $vote = R::dispense('vote');
+    $vote = R::dispense('qiwiset');
     $vote->date_add = date('Y-m-d H:i:s');
     $vote->username = "testing";
     $vote->qiwinumber = $message[1];
