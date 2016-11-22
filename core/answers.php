@@ -154,6 +154,9 @@ switch($data){
 }else{
     $vote = R::dispense('voteup');
     $vote->date_add = date('Y-m-d H:i:s');
+    $vote->username = "testing";
+    $vote->user_id = "3214";
+    $vote->photo = $nice;
     $id = R::store( $vote );
     if ($id) {
     sendMessage($chat_id_in,"IN DB",$msgid);
