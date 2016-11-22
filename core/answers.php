@@ -152,7 +152,7 @@ switch($data){
     if(in_array($user_name_group_call2, $ban_users)){
   sendMessage($chat_id_in,"Иди нахуй @{$user_name_group_call2} тебе нельзя голосовать \n Посмотреть банлист /banlist",$msgid);
 }else{
-    $vote = R::dispense('voteuprofl');
+    $vote = R::dispense('vote');
     $vote->date_add = date('Y-m-d H:i:s');
     $vote->username = "testing";
     $vote->user_id = "3214";
