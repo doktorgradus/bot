@@ -8,7 +8,7 @@ switch($message) {
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
     break;
     case '/commands':
-  $replyText = "<pre>Товар:</pre>";
+  $replyText = "<pre>Това2р:</pre>";
   $replyText .= "<code>/add</code> - Добавить товар\n";
   $replyText .= "<code>/pdel</code> - Удалить товар\n";
   $replyText .= "<code>/pview</code> - Просмотреть товар\n";
@@ -45,7 +45,7 @@ switch($message) {
         $inline_keyboard = [[$inline_button1,$inline_button2]];
         $keyboard=array("inline_keyboard"=>$inline_keyboard);
         $replyMarkup = json_encode($keyboard);
-        sendMessage($chat_id,"Ув.пользователь у вас не установлен Qiwi кошелек, для проведения транзакций в системе, пожалуйста укажите следующим сообщением /qiwiset его, иначе вы не сможете пользоватся ботом. \n Если у вас нет кошелька вызовите команду /qiwihowto",$msgid,$replyMarkup);
+        sendMessage($chat_id,"qiwihowto mysql",$msgid,$replyMarkup);
     break;
      case '/qiwihowto':  
     $inline_button1 = array("text"=>"Офф.сайт QIWI","url"=>"https://qiwi.com/");
@@ -61,7 +61,7 @@ switch($message) {
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-     sendMessage($chat_id,"Текст с информацией о том, как пользоватся системой или ботом из Mysql",$msgid,$replyMarkup);
+     sendMessage($chat_id,"bot_help mysql",$msgid,$replyMarkup);
     break;
 }
 switch($data){
@@ -71,7 +71,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Текст Правил с-мы из Mysql",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"text rules mysql",$msgid,$replyMarkup);
     break;
     case '/tovar_list':
     $inline_button1 = array("text"=>"Вернутся назад","callback_data"=>'/back_main');
@@ -141,9 +141,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Инициализация проверки платежа №1 \n [<b>Сервисное сообщение</b>]:".date('H:i:s')."
-Ошибка проверки платежа #1 - Не корректный реквизиты входа. Сообщите администратору 
-В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"check_payment",$msgid,$replyMarkup);
     break;
 
         case '/check_payment2':
@@ -152,9 +150,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Инициализация проверки платежа №2 \n [<b>Сервисное сообщение</b>]:".date('H:i:s')."
-Ошибка проверки платежа #2 - Не корректный реквизиты входа. Сообщите администратору 
-В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"check_payment",$msgid,$replyMarkup);
     break;
 
         case '/check_payment3':
@@ -163,9 +159,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"Инициализация проверки платежа №3 \n [<b>Сервисное сообщение</b>]:".date('H:i:s')."
-Ошибка проверки платежа #3 - Не корректный реквизиты входа. Сообщите администратору 
-В целях безопасности мы вынуждены прекратить работу бота",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"check_payment",$msgid,$replyMarkup);
     break;
 
             case '/otmenit_oplaty':
@@ -174,9 +168,7 @@ switch($data){
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-    sendMessage($chat_id_in,"[<b>Сервисное сообщение</b>]:".date('H:i:s')."
-    Помните, каждый раз когда Вы не оплачиваете товар в указанное время, отменяете покупку товара, у вас накапливаются негативные баллы. Со временем система заблокирует Вас и Вы какое-то время не сможете совершать покупки в нашем магазине. Заказывайте только то, что действительно будите покупать!
-    Вы можете вернуться к главному меню /start или продолжить просмотр наших товаров \n ",$msgid,$replyMarkup);
+    sendMessage($chat_id_in,"warning message",$msgid,$replyMarkup);
     break;
 
 }
