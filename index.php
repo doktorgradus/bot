@@ -1,5 +1,6 @@
 <?php
 echo "da";
+//test
 //////////////////////////////////////////////
 //require __DIR__ . '/vendor/autoload.php'; //
 require 'core/functions.php';               //
