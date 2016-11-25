@@ -1,5 +1,5 @@
 <?php
-echo "answers loadedd   <br>";
+echo "answers loadedd21ф1   <br>";
 switch($message) {
   case '/banlist':
   sendMessage($chat_id,"Список забаненых хуесосов ".json_encode($ban_users),$msgid,$replyMarkup);
@@ -9,7 +9,7 @@ switch($message) {
   break;
 
 	case '/goth':  
-     if(in_array($user_id_group, $vip_users2)){
+         if(in_array($username2, $vip_users2)){
 			
 	include 'core/commands/goth/goth.php';
 	include 'core/commands/goth/preloader.php';
@@ -19,34 +19,26 @@ switch($message) {
 	include 'commands/permission_denied.php';
 }
         break;
-        case 'sendmain':
-        
-        $inline_button1 = array("text"=>"Снять","callback_data" =>'/yes');
-        $inline_button2 = array("text"=>"Пополнить","callback_data" =>'/no');
-        $inline_keyboard = [[$inline_button1,$inline_button2]];
-        $keyboard=array("inline_keyboard"=>$inline_keyboard);
-        $replyMarkup = json_encode($keyboard);
-        sendMessage($chat_id,"Какое действие вы хотите совершить?",$msgid,$replyMarkup);
-        break;
         case '/tits':  
     include 'core/commands/tits/tits.php';
     include 'core/commands/tits/preloader.php';
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_tits}",$replyMarkup);
         break;  
                 case '/butts':  
     include 'core/commands/buts/buts_id.php';
     include 'core/commands/buts/preloader.php';
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_butts}",$replyMarkup);
         break; 
                 case 'butts':  
     include 'core/commands/buts/buts_id.php';
     include 'core/commands/buts/preloader.php';
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из $count_butts",$replyMarkup);
         break; 
         case 'tits':  
     include 'core/commands/tits/tits.php';
     include 'core/commands/tits/preloader.php';
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_butts}",$replyMarkup);
         break;
     case '/id':
         sendMessage($chat_id,"Твой ID: <b>{$user_id_group}</b>",$msgid);
@@ -54,7 +46,7 @@ switch($message) {
         case '/gif':
     include 'core/commands/gif/gif.php';
     include 'core/commands/gif/preloader.php';
-    sendDocument($chat_id,$document_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+    sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_gifs}",$replyMarkup);
         break;  
         case '/commands':
             include 'commands/commands.php';
@@ -79,8 +71,10 @@ switch($message) {
             include 'commands/sram.php';
         break;
         case 'Бот ливни':
-        if(in_array($user_id_group, $vip_users)){
+            if(in_array($user_id_group, $admin)){
     include 'commands/leave/leave.php';
+}else{
+    include 'commands/permission_denied.php';
 }
         break;
     case '/commands@phphelperbot':
@@ -111,25 +105,25 @@ switch($message) {
         case '/gif@phphelperbot':
         include 'core/commands/gif/gif.php';
         include 'core/commands/gif/preloader.php';
-    sendDocument($chat_id,$document_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+    sendDocument($chat_id,$document_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_gifs}",$replyMarkup);
 break;
             case '/tits@phphelperbot':  
      include 'core/commands/tits/tits.php';
      include 'core/commands/tits/preloader.php';
-    sendPhoto($chat_id,$photo_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+    sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_tits}",$replyMarkup);
         break;  
        
              case '/butts@phphelperbot':  
      include 'core/commands/buts/buts_id.php';
      include 'core/commands/buts/preloader.php';
-    sendPhoto($chat_id,$buts_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+    sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_butts}",$replyMarkup);
         break;
         case '/goth@phphelperbot':  
-     if(in_array($user_id_group, $vip_users2)){
+         if(in_array($username2, $vip_users2)){
 			
 			include 'core/commands/goth/goth.php';
 			include 'core/commands/goth/preloader.php';
-		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"№: {$rand}",$replyMarkup);
+		    sendPhoto($chat_id,$goth_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_goth}",$replyMarkup);
         	 
 }else{
 	include 'commands/permission_denied.php';
@@ -142,33 +136,4 @@ break;
             //include 'commands/default/default.php';
         break;
 }
-switch($data){
-//     case '/voteup':
-//     $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_up');
-//     $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_up');
-//     $inline_keyboard = [[$inline_button1,$inline_button2]];
-//     $keyboard=array("inline_keyboard"=>$inline_keyboard);
-//     $replyMarkup = json_encode($keyboard); 
-//     if(in_array($user_name_group_call2, $ban_users)){
-//   sendMessage($chat_id_in,"Иди нахуй @{$user_name_group_call2} тебе нельзя голосовать \n Посмотреть банлист /banlist",$msgid);
-// }else{
-
-//   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👍 за {$nice} ",$msgid);
-//   unset($output);
-// }
-//     break;
-//     case '/votedown':
-//     $inline_button1 = array("text"=>"Подвердить","callback_data"=>'/confirm_down');
-//     $inline_button2 = array("text"=>"Изменить","callback_data"=>'/decline_down');
-//     $inline_keyboard = [[$inline_button1,$inline_button2]];
-//     $keyboard=array("inline_keyboard"=>$inline_keyboard);
-//     $replyMarkup = json_encode($keyboard); 
-//     if(in_array($user_name_group_call2, $ban_users)){
-//   sendMessage($chat_id_in,"Иди нахуй @{$user_name_group_call2} тебе нельзя голосовать \n Посмотреть банлист /banlist",$msgid);
-// }else{
-//   sendMessage($chat_id_in,"[".date('H:i:s',$nice3)."] Пользователь @{$user_name_group_call2} {$user_first_name_group1} [<b>{$chat_id_in2}</b>] в групе [<b> {$nice2} </b>]   Проголосовал 👎 за {$nice} ",$msgid);
-// }
-//     break;
-}
-
 ?>

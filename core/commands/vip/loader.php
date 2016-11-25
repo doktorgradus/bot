@@ -7,5 +7,6 @@
  require 'core/commands/vip/custom_commands/custom_tits.php';
  require 'core/commands/vip/custom_commands/custom_butts.php'; 
  require 'core/commands/vip/custom_commands/qiwiset.php'; 
+  require 'core/commands/vip/custom_commands/vote.php'; 
 echo "VIP FUNCTION & CUSTOM_COMMANDS LOADED";
 ?>

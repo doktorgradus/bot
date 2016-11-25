@@ -1,10 +1,10 @@
-<?
+<?php
 echo "Settings loadedd  <br>";
 // include 'Botan.php'; //disabled
 
 error_reporting(E_ALL);
 date_default_timezone_set('Europe/Moscow');
-$access_token = $_ENV['TELEGRAM_TOKEN'];
+$access_token = '281890161:AAFV11sF1GhyZ4NAREsFK3AjoFYuA5FmOKQ';
 $api = 'https://api.telegram.org/bot' . $access_token;
 $output = json_decode(file_get_contents('php://input'), TRUE);
 $chat_id = $output['message']['chat']['id'];
@@ -13,14 +13,17 @@ $msgid = $output['message']['message_id'];
 $date = $output['message']['date'];
 $message = $output['message']['text'];
 $callback_query = $output['callback_query'];
+$callback_id = $output['callback_query']['id'];
 $data = $callback_query['data'];
 $message_preg = $output['message']['text'];
 $sticker = $output['message']['sticker'];
 $photo = $output['message']['file_id'];
-$username =$output['message']['chat']['username'];
+$username = $output['message']['chat']['username'];
+$username2 = $output['message']['from']['username'];
 $user_id_group = $output['message']['from']['id'];
 $user_first_name_group = $output['message']['from']['first_name'];
 $user_first_name_group1 = $output['callback_query']['from']['first_name'];
+$fn = $first_name.$user_first_name_group;
 $nice = $output['callback_query']['message']['caption'];
 $nice2 = $output['callback_query']['message']['chat']['title'];
 $nice3 = $output['callback_query']['message']['date'];
@@ -34,10 +37,10 @@ $username_call2 = $callback_query['from']['username'];
 $user_name_group_call = $callback_query['message']['from']['username'];
 $user_name_group_call2 = $callback_query['from']['username'];
 // VIP USERS
-$ban_users = ["Quiss"];
-$vip_users = ["276712063","233780968","76484596","298347855","92116599","161643604","194125072","247069389","175754334","92116599","155638789"];
-
-$vip_users2 =["233780968","276712063","92116599","155638789"]; // Denormalization user_id 4 goth 
+$admin = ["276712063"];
+$ban_users = [""];
+$vip_users = ["oneerror","ExileeD","karrrtaviy","Denormalization","infecti0N_113"];
+$vip_users2 =["oneerror","ExileeD","Denormalization"]; // Denormalization user_id 4 goth 
 $count_vips = count($vip_users);
 // END VIP USERS
 $emoji = array(
