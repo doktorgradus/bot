@@ -31,8 +31,8 @@ function leaveChat($chat_id) {
   file_get_contents($GLOBALS['api'] . '/LeaveChat?chat_id=' . $chat_id);
 }
 
-function answerCallbackQuery($callback_id,$text,$show) {
-  file_get_contents($GLOBALS['api'] . '/answerCallbackQuery?callback_query_id=' . $callback_id .'&text=' . $text .'&show_alert='.$show);
+function answerCallbackQuery($callback_query_id,$text,$show) {
+  file_get_contents($GLOBALS['api'] . '/answerCallbackQuery?callback_query_id=' . $callback_query_id .'&text=' . $text .'&show_alert='.$show);
 }
 
 

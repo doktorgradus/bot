@@ -1,10 +1,10 @@
 <?php
-	$inline_button1 = array("text"=>"👍","callback_data" =>'/voteup');
-    $inline_button2 = array("text"=>"👎","callback_data" =>'/votedown');
-    $inline_keyboard = [[$inline_button1,$inline_button2]];
-    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard);
-$rand = rand(1, 300); 
+$inline_button1 = array("text"=>"👍","callback_data" =>'/sramup');
+$inline_button2 = array("text"=>"👎","callback_data" =>'/sramdown');
+$inline_keyboard = [[$inline_button1,$inline_button2]];
+$keyboard=array("inline_keyboard"=>$inline_keyboard);
+$replyMarkup = json_encode($keyboard);
+$rand = rand(1, 300);
 $sram_pars = file_get_contents('http://sramu.net/index_'.$rand.'.html'); 
 preg_match_all('/><p>(.*?)<\/p><\/td><\/tr><tr>/', $sram_pars, $sram); 
 $i = rand(0, count($sram[1]) - 1); 

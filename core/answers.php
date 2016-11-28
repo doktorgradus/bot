@@ -1,5 +1,5 @@
 <?php
-echo "answers loadedd21ф1   <br>";
+echo "answers loadedd new try   <br>";
 switch($message) {
   case '/banlist':
   sendMessage($chat_id,"Список забаненых хуесосов ".json_encode($ban_users),$msgid,$replyMarkup);
@@ -9,7 +9,7 @@ switch($message) {
   break;
 
 	case '/goth':  
-         if(in_array($username2, $vip_users2)){
+     if(in_array($user_id_group, $vip_users2)){
 			
 	include 'core/commands/goth/goth.php';
 	include 'core/commands/goth/preloader.php';
@@ -22,7 +22,6 @@ switch($message) {
         case '/tits':  
     include 'core/commands/tits/tits.php';
     include 'core/commands/tits/preloader.php';
-
     sendPhoto($chat_id,$photo_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_tits}",$replyMarkup);
         break;  
                 case '/butts':  
@@ -71,10 +70,8 @@ switch($message) {
             include 'commands/sram.php';
         break;
         case 'Бот ливни':
-            if(in_array($user_id_group, $admin)){
+        if(in_array($user_id_group, $vip_users)){
     include 'commands/leave/leave.php';
-}else{
-    include 'commands/permission_denied.php';
 }
         break;
     case '/commands@phphelperbot':
@@ -119,7 +116,7 @@ break;
     sendPhoto($chat_id,$buts_id[$rand],$msgid,"Тебе достался вариант №: {$rand} из {$count_butts}",$replyMarkup);
         break;
         case '/goth@phphelperbot':  
-         if(in_array($username2, $vip_users2)){
+     if(in_array($user_id_group, $vip_users2)){
 			
 			include 'core/commands/goth/goth.php';
 			include 'core/commands/goth/preloader.php';
