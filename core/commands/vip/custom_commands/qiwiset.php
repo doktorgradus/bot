@@ -1,5 +1,5 @@
 <?php
-echo "QIWI SET LOAD vps <br>";
+echo "QIWI SET LOAD vps ".__FILE__."<br>";
 if(in_array($user_id_group, $vip_users)){
             if (preg_match_all("/(?<![\w\d])(vote [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
     //sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);

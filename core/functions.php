@@ -1,5 +1,5 @@
 <?php
-echo "Functions loadedd   <br>";
+echo "Functions loaded".__FILE__."<br>";
 /**
  * Функция отправки сообщения sendMessage().
  */

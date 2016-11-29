@@ -1,5 +1,5 @@
 <?php
-echo "Settings loadedd  <br>";
+echo "Settings loaded".__FILE__."<br>";
 // include 'Botan.php'; //disabled
 
 error_reporting(E_ALL);

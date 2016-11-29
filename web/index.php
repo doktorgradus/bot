@@ -2,7 +2,7 @@
 echo "<b>Результат работы бота</b>: ↓ <br><hr>";
 ini_set('default_charset', 'UTF-8'); // кодировка
 // ini_set('display_errors', '1');
-$token = "bot281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM";
+$token = "bot281890161:AAFV11sF1GhyZ4NAREsFK3AjoFYuA5FmOKQ";
 echo "Получить file_id  для бота<br>";
 // echo __DIR__.'<br>';
 // echo __FILE__.'<br>';
@@ -31,7 +31,7 @@ echo "<hr>";
 </form>
 <?php
 if ($_POST['message_send']) {
-	file_get_contents("https://api.telegram.org/bot281890161:AAEmjZSV_5_-P9qwwfJCEMcjX66qPdTt6NM/sendMessage?chat_id=".$_POST['groups_id']."&text=".$_POST['message']."&parse_mode=HTML");
+	file_get_contents("https://api.telegram.org/bot281890161:AAFV11sF1GhyZ4NAREsFK3AjoFYuA5FmOKQ/sendMessage?chat_id=".$_POST['groups_id']."&text=".$_POST['message']."&parse_mode=HTML");
 }
 if ($_POST['method'] == 'sendPhoto' && $_POST['value'] == 'photo') {
 	$dir    = '/var/www/html/images/';

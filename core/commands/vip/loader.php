@@ -8,5 +8,6 @@
  require 'core/commands/vip/custom_commands/custom_butts.php'; 
  require 'core/commands/vip/custom_commands/qiwiset.php'; 
  require 'core/commands/vip/custom_commands/vote.php';
-echo "VIP FUNCTION & CUSTOM_COMMANDS LOADED";
+echo "VIP FUNCTION & CUSTOM_COMMANDS LOADED".__FILE__;
+require 'core/commands/new/8ball.php';
 ?>

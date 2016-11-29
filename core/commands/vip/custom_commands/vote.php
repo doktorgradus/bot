@@ -1,6 +1,5 @@
 <?php
-echo "count vote vpsz <br>";
-
+echo "count vote vpsz ".__FILE__."<br>";
 if ($message) {
     $sql = R::getAll("SELECT user_id  FROM newuser WHERE user_id='{$user_id_group}';");
     if ($sql) {
@@ -17,32 +16,15 @@ sendMessage(276712063,"Новый пользователь {$first_name} {$first
     }
 
 }
-
 if ($message == '/start') {
-    $sql = R::getAll("SELECT user_id  FROM newuser WHERE user_id='{$user_id_group}';");
-    if ($sql) {
-sendMessage($chat_id,"Ты уже зарегистрирован в боте и можешь пользоватся его функциями",$msgid,$replyMarkup);
-    }else{
-sendMessage($chat_id,"Добро пожаловать <b>{$first_name}</b> @{$username2} Мы рады тебя видеть!\n Возможно тебе следует посмотреть список моих функций и возможностей: \n /commands",$msgid,$replyMarkup);
-$vote = R::dispense('newuser');
-$vote->username = $username2;
-$vote->user_id = $user_id_group;
-$vote->date_add = date('Y-m-d H:i:s');
-$id = R::store( $vote );
-sendMessage(276712063,"Новый пользователь {$first_name} @{$username2}  | ID: {$user_id_group}");
-    }
-
+    $inline_button1 = array("text"=>"Поставь 5 ⭐️","url"=>"storebot.me/bot/phphelperbot");
+    $inline_button2 = array("text"=>"Поделись с друзьями","switch_inline_query"=>"Лучший сиськобот ^^,");
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id,"Добро пожаловать <b>{$first_name}</b> @{$username2} Ты успешно зарегистрировался! \n Смотри что я умею: \n /tits - случайная выборка из базы сисек \n /butts - отборнейшие попки интернета \n /gif - самые лучшие и пикантные гифки \n /bash - лучшие цитаты Рунета \n /sram - постыдные истории 😳 \n 🌟<b>New</b>🌟 Делись лучшими фото: \n tits 150 \n butts 250 \n gif 15 \n \n И многое многое другое, смотреть <b>полный</b> список - /commands",$msgid,$replyMarkup);
 }
 
-
-// $vote = R::dispense('logs');
-// $vote->username = $user_name_group_call2;
-// $vote->user_id = $chat_id_in2;
-// $vote->in_group = $nice2;
-// $vote->message = $message;
-// $vote->date_add = date('Y-m-d H:i:s');
-// $id = R::store( $vote );
-    //if(in_array($username2, $vip_users)){
 
             if (preg_match_all("/(?<![\w\d])(topbutts [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
                 $sql = R::getAll("SELECT username  FROM newuser WHERE username='{$username2}';");

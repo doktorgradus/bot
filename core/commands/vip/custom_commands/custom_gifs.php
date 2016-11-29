@@ -1,5 +1,4 @@
 <?php
-if(in_array($user_id_group, $vip_users)){
         	if (preg_match_all("/(?<![\w\d])(gif [0-9]{1,9})(?![\w\d])/uim",$message_preg, $mathes)) {
     	//sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
 	$message = explode(" ", $message);
@@ -14,6 +13,5 @@ if(in_array($user_id_group, $vip_users)){
     sendChatAction($chat_id, "upload_document");
     sendDocument($chat_id,$document_id[$message[1]],$msgid,"Тебе достался вариант №: ".$message[1]." из ".$count_gifs,$replyMarkup);
         	 }
-}
 
 ?>
