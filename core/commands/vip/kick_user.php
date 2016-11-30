@@ -5,13 +5,21 @@ if(in_array($user_id_group, $vip_users)){
 	$message = explode(" ", $message);
 	 $pages = R::findOne('newuser',' username = ? ',[$message[1]]);
 	//sendMessage($chat_id,"Кикаем юзера {$message[1]}",$msgid);
-	sendMessage($chat_id,"$pages->user_id Записали в базу юзера <b>{$message[1]}</b>  дату [".date('H:i:s')."] причину <b>{$message[2]}</b> \n Посмотреть - <a href='http://telegrambotv2.herokuapp.com/banlist.txt'>банлист</a>");
-	$fp = fopen("banlist.txt", "a"); // Открываем файл в режиме записи 
-	$mytext = "[".date('H:i:s')."]"."admin: {$user_first_name_group} "." user_id: {$message[1]} reason: {$message[2]} \r\n"; // Исходная строка
-	$test = fwrite($fp, $mytext); // Запись в файл
-	fclose($fp); //Закрытие файла
-	kickchatmember($chat_id,$message[1]);
-        	}
+	if ($pages) {
+	kickchatmember($chat_id,$pages->user_id);
+	$banlist = R::dispense('banlist');
+	$banlist->user_name = $pages->username;
+	$banlist->user_id = $pages->user_id;
+	$banlist->reason = $message[2];
+	$banlist->date_add = date('Y-m-d H:i:s');
+	$banlist->date_unban = "NULL";
+	$banlist->banned_by = $username2;
+	$id = R::store($banlist);
+			sendMessage($chat_id,"ID пользователя: $pages->user_id Записали в базу юзера <b>{$message[1]}</b>  дату [".date('Y-m-d H:i:s')."] причину <b>{$message[2]}</b> \n Забанен админом - <b>{$username2}</b> \n Посмотреть - банлист",$msgid,$replyMarkup);
+	}else{
+		//sendMessage($chat_id,"Пользователя нет в базе данных",$msgid,$replyMarkup);
+	}
+}
 }
 
 ?>

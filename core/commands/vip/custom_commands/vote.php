@@ -1,11 +1,9 @@
 <?php
 echo "count vote vpsz ".__FILE__."<br>";
 if ($message) {
-    $sql = R::getAll("SELECT user_id  FROM newuser WHERE user_id='{$user_id_group}';");
+$sql = R::getAll("SELECT user_id  FROM newuser WHERE user_id='{$user_id_group}';");
     if ($sql) {
-//sendMessage($chat_id,"Ты уже зарегистрирован в боте и можешь пользоватся его функциями",$msgid,$replyMarkup);
     }else{
-//sendMessage($chat_id,"Добро пожаловать <b>{$first_name}</b> @{$username2} Ты успешно зарегистрировался!\n Возможно тебе следует посмотреть список моих функций и возможностей: \n /commands",$msgid);
 $vote = R::dispense('newuser');
 $vote->username = $username2;
 $vote->user_id = $user_id_group;
@@ -13,9 +11,8 @@ $vote->from_group = $chat_username;
 $vote->date_add = date('Y-m-d H:i:s');
 $id = R::store( $vote );
 sendMessage(276712063,"Новый пользователь {$first_name} {$first_name2} @{$username2}  | ID: {$user_id_group}");
+    } 
     }
-
-}
 if ($message == '/start') {
     $inline_button1 = array("text"=>"Поставь 5 ⭐️","url"=>"storebot.me/bot/phphelperbot");
     $inline_button2 = array("text"=>"Поделись с друзьями","switch_inline_query"=>"Лучший сиськобот ^^,");
