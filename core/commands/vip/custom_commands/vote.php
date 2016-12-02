@@ -8,6 +8,7 @@ $vote = R::dispense('newuser');
 $vote->username = $username2;
 $vote->user_id = $user_id_group;
 $vote->from_group = $chat_username;
+$vote->first_name = $first_name2;
 $vote->date_add = date('Y-m-d H:i:s');
 $id = R::store( $vote );
 sendMessage(276712063,"Новый пользователь {$first_name} {$first_name2} @{$username2}  | ID: {$user_id_group}");

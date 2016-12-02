@@ -40,9 +40,10 @@ $chat_username = $output['message']['chat']['username'];
 // VIP USERS
 $ban_users = ["Quiss"];
 $vip_users = ["276712063","233780968","76484596","298347855","92116599","161643604","194125072","247069389","175754334","92116599","155638789"];
+$vip_users2 = ["oneerror","Denormalization","ExileeD"];
 
-$vip_users2 =["233780968","276712063","92116599","155638789"]; // Denormalization user_id 4 goth 
-$count_vips = count($vip_users);
+//$vip_users2 =["233780968","276712063","92116599","155638789"]; // Denormalization user_id 4 goth 
+$count_vips = count($vip_users2);
 // END VIP USERS
 $emoji = array(
   'preload' => json_decode('"\uD83D\uDE03"'), // Улыбочка.

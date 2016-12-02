@@ -1,6 +1,6 @@
 <?php
-if(in_array($user_id_group, $vip_users)){
-        	if (preg_match_all("/(?<![\w\d])(kick [a-z]+)(?![\w\d])/uim",$message_preg, $mathes)) {
+if(in_array($username2, $vip_users2)){
+        	if (preg_match_all("/(?<![\w\d])(kick [A-Za-z]+[A-Za-z0-9_]+)(?![\w\d])/uim",$message_preg, $mathes)) {
     	//sendMessage($chat_id,"Ваше сообщение полное {$message}",$msgid);
 	$message = explode(" ", $message);
 	 $pages = R::findOne('newuser',' username = ? ',[$message[1]]);

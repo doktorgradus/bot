@@ -58,7 +58,7 @@ switch($message) {
     sendMessage($chat_id,"Общая статистика: \n Сисек в базе: <b>{$count_tits}</b> \n Задниц в базе: <b>{$count_butts}</b>\n goth ebm: <b>{$count_goth}</b> \n Гифок в базе: <b>{$count_gifs}</b> \n Вип юзеров: <b>{$count_vips}</b> \n @phphelperbot - дата обновления [".date('H:i:s')."]",$msgid);
         break;
         case '/vips@phphelperbot':
-        sendMessage($chat_id,"Список премиум юзеров:".json_encode($vip_users),$msgid);
+        sendMessage($chat_id,"Список премиум юзеров:".json_encode($vip_users2),$msgid);
         break;
         case '/bash':
             include 'commands/bash.php';
@@ -70,7 +70,7 @@ switch($message) {
             include 'commands/sram.php';
         break;
         case 'Бот ливни':
-        if(in_array($user_id_group, $vip_users)){
+        if(in_array($user_id_group, $vip_users2)){
     include 'commands/leave/leave.php';
 }
         break;
