@@ -36,9 +36,6 @@ function answerCallbackQuery($callback_query_id,$text,$show) {
 }
 
 
-function editMessageText($chat_id,$message_id,$msgid,$text) {
-  file_get_contents($GLOBALS['api'] . '/editMessageText?chat_id=' . $chat_id .'&message_id=' . $msgid .'&text='.$text);
-}
 
 function kickchatmember($chat_id,$user_id) {
   file_get_contents($GLOBALS['api'] . '/kickchatmember?chat_id=' . $chat_id."&user_id=".$user_id);
@@ -50,5 +47,13 @@ file_get_contents($GLOBALS['api'] . '/sendVideo?chat_id=' . $chat_id .'&reply_to
 
 function getChatAdministrators($chat_id,$group){
 	file_get_contents($GLOBALS['api'] ."/getChatAdministrators?chat_id=".$group);
+}
+
+function editMessageText($chat_id,$message_id,$text){
+	file_get_contents($GLOBALS['api'] . "/editMessageText?chat_id=".$chat_id."&message_id=".$message_id."&text=".$text);
+}
+
+function editMessageReplyMarkup($chat_id,$message_id,$replyMarkup){
+	file_get_contents($GLOBALS['api'] . "/editMessageReplyMarkup?chat_id=".$chat_id."&message_id=".$message_id."&reply_markup=".$replyMarkup);
 }
 ?>

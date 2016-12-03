@@ -12,7 +12,7 @@ require 'libs/db.php';
 $ban = R::findOne('banlist',' user_name = ? ',[$username2]);
 if ($ban) {
 	$inline_button1 = array("text"=>"Правила","callback_data" =>'/rules');
-    $inline_button2 = array("text"=>"Попросить разбан","url"=>"telegram.me/oneerror");
+    $inline_button2 = array("text"=>"Попросить разбан","url"=>"telegram.me/{$ban->banned_by}");
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 

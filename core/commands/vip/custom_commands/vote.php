@@ -15,7 +15,7 @@ sendMessage(276712063,"Новый пользователь {$first_name} {$first
     } 
     }
 if ($message == '/start') {
-    $inline_button1 = array("text"=>"Поставь 5 ⭐️","url"=>"storebot.me/bot/phphelperbot");
+    $inline_button1 = array("text"=>"Поставь 5 ⭐️","url"=>"telegram.me/storebot?start=phphelperbot");
     $inline_button2 = array("text"=>"Поделись с друзьями","switch_inline_query"=>"Лучший сиськобот ^^,");
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
