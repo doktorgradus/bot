@@ -11,4 +11,5 @@
 echo "VIP FUNCTION & CUSTOM_COMMANDS LOADED".__FILE__;
 require 'core/commands/new/8ball.php';
  require 'core/commands/vip/addvip.php';
+  require 'core/commands/vip/viplist.php';
 ?>
