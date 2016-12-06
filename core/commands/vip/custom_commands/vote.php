@@ -100,6 +100,15 @@ if ($data == '/buttsup') {
         // sendMessage($chat_id_in,"ты уже голосовал за эту фотографию",$msgid);
     }else{
 answerCallbackQuery($callback_id,"Ты проголосовал 👍","false");
+$message = explode(" ", $message);
+$count = R::getAll("SELECT COUNT(vote_for) as cnt  FROM buttsup WHERE vote_for=613;");
+    $count2 = R::getAll("SELECT COUNT(vote_for) as cnt  FROM buttsdown WHERE vote_for=613;");
+    $inline_button1 = array("text"=>"👍2 {$count[0]['cnt']}","callback_data" =>'/buttsup');
+    $inline_button2 = array("text"=>"👎 {$count2[0]['cnt']}","callback_data" =>'/buttsdown');
+    $inline_keyboard = [[$inline_button1,$inline_button2]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard);
+    editMessageReplyMarkup($chat_id,$message_id,$replyMarkup);
 $vote = R::dispense('buttsup');
 $vote->username = $user_name_group_call2;
 $vote->user_id = $chat_id_in2;
@@ -107,6 +116,7 @@ $vote->in_group = $nice2;
 $vote->vote_for = $voted[4];
 $vote->date_add = date('Y-m-d H:i:s');
 $id = R::store( $vote );
+
     }
 
 

@@ -70,7 +70,7 @@ switch($message) {
             include 'commands/sram.php';
         break;
         case 'Бот ливни':
-        if(in_array($user_id_group, $vip_users2)){
+        if(in_array($user_id_group, $vip_users)){
     include 'commands/leave/leave.php';
 }
         break;
